@@ -150,7 +150,7 @@ Cory Watson, C<< <cory.watson at iinteractive.com> >>
 
 =head1 SEE ALSO
 
-perl(1)
+perl(1), L<Wikipedia|http://en.wikipedia.org/wiki/RGB_color_space>
 
 =head1 COPYRIGHT & LICENSE
 
