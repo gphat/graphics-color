@@ -1,41 +1,49 @@
-package Graphics::Color::YIQ;
+package Graphics::Color::YUV;
 use Moose;
 
 use Graphics::Color;
 
-has 'luminance' => ( is => 'rw', isa => 'Num', default => 1 );
-has 'in_phase' => ( is => 'rw', isa => 'Num', default => 1 );
-has 'quadrature' => ( is => 'rw', isa => 'Num', default => 1 );
+has 'luma' => ( is => 'rw', isa => 'NumberOneOrLess', default => 0 );
+has 'blue_luminance' => ( is => 'rw', isa => 'NumberOneOrLess', default => 0 );
+has 'red_luminance' => ( is => 'rw', isa => 'NumberOneOrLess', default => 0 );
 has 'name' => ( is => 'rw', isa => 'Str' );
 
-__PACKAGE__->meta->alias_method('y' => __PACKAGE__->can('luminance'));
-__PACKAGE__->meta->alias_method('i' => __PACKAGE__->can('in_phase'));
-__PACKAGE__->meta->alias_method('q' => __PACKAGE__->can('quadrature'));
+__PACKAGE__->meta->alias_method('y' => __PACKAGE__->can('luma'));
+__PACKAGE__->meta->alias_method('u' => __PACKAGE__->can('blue_luminance'));
+__PACKAGE__->meta->alias_method('v' => __PACKAGE__->can('red_luminance'));
 
 sub as_string {
     my ($self) = @_;
 
     return sprintf('%s,%s,%s',
-        $self->luminance, $self->in_phase, $self->quadrature
+        $self->luma, $self->blue_luminance, $self->red_luminance
     );
 }
 
 sub as_array {
     my ($self) = @_;
 
-    return ($self->luminance, $self->in_phase, $self->quadrature);
+    return ($self->luma, $self->blue_luminance, $self->red_luminance);
 }
+
+# TODO RGB Conversion
+# OLD STYLE : Y' = 0.299R + 0.587G + 0.114B
+# NEW STYLE: Y' = 0.2125R + 0.7154G + 0.0721B
+# U = B - Y'
+# V = R - Y'
+#
+# http://www.fourcc.org/fccyvrgb.php
 
 1;
 __END__
 
 =head1 NAME
 
-Graphics::Color::YIQ
+Graphics::Color::YUV
 
 =head1 DESCRIPTION
 
-Graphics::Color::YIQ represents a Color in an YIQ color space.
+Graphics::Color::YUV represents a Color in an Y'UV color space.
 
 =head1 DISCLAIMER
 
@@ -70,15 +78,15 @@ Creates a new Graphics::Color::YIQ.
 
 =item luminance
 
-Set/Get the luminance component of this Color.
+Set/Get the luma (Y') component of this Color.  Aliased to y.
 
-=item in_phase
+=item blue_luminance
 
-Set/Get the in_phase component of this Color.
+Set/Get the blue_luminance component of this Color. Aliased to u.
 
-=item quadrature
+=item red_luminance
 
-Set/Get the quadrature component of this Color.
+Set/Get the red_luminance component of this Color. Aliased to v.
 
 =item name
 

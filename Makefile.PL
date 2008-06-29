@@ -6,6 +6,8 @@ author   'Cory G Watson <cory.watson@iinteractive.com>';
 
 build_requires 'Test::More';
 
+requires 'Moose';
+
 auto_install;
 
 WriteAll;

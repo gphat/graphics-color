@@ -1,4 +1,4 @@
-use Test::More tests => 9;
+use Test::More tests => 10;
 
 BEGIN {
     use_ok('Graphics::Color::CMYK');
@@ -16,6 +16,7 @@ my $color = Graphics::Color::CMYK->new(
 );
 
 cmp_ok($color->cyan, '==', .1, 'cyan');
+cmp_ok($color->c, '==', .1, 'cyan short');
 cmp_ok($color->magenta, '==', .4, 'magenta');
 cmp_ok($color->yellow, '==', .5, 'yellow');
 cmp_ok($color->key, '==', .3, 'key');

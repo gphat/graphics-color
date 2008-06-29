@@ -9,6 +9,11 @@ has 'blue' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );
 has 'alpha' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );
 has 'name' => ( is => 'rw', isa => 'Str' );
 
+__PACKAGE__->meta->alias_method('r' => __PACKAGE__->can('red'));
+__PACKAGE__->meta->alias_method('g' => __PACKAGE__->can('green'));
+__PACKAGE__->meta->alias_method('b' => __PACKAGE__->can('blue'));
+__PACKAGE__->meta->alias_method('a' => __PACKAGE__->can('alpha'));
+
 sub as_string {
     my ($self) = @_;
 
@@ -95,19 +100,19 @@ Creates a new Graphics::Color::RGB.
 
 =item red
 
-Set/Get the red component of this Color.
+Set/Get the red component of this Color.  Aliased to a 'r' as well.
 
 =item green
 
-Set/Get the green component of this Color.
+Set/Get the green component of this Color. Aliased to a 'g' as well.
 
 =item blue
 
-Set/Get the blue component of this Color.
+Set/Get the blue component of this Color. Aliased to a 'b' as well.
 
 =item alpha
 
-Set/Get the alpha component of this Color.
+Set/Get the alpha component of this Color. Aliased to a 'a' as well.
 
 =item name
 

@@ -1,4 +1,4 @@
-use Test::More tests => 6;
+use Test::More tests => 7;
 
 BEGIN {
     use_ok('Graphics::Color::YIQ');
@@ -9,6 +9,7 @@ my $color = Graphics::Color::YIQ->new(
 );
 
 cmp_ok($color->luminance, '==', 1, 'luminance');
+cmp_ok($color->y, '==', 1, 'luminance short');
 cmp_ok($color->in_phase, '==', .4, 'in_phase');
 cmp_ok($color->quadrature, '==', .5, 'lightness');
 

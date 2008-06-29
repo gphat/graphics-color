@@ -9,6 +9,10 @@ has 'lightness' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );
 has 'alpha' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );
 has 'name' => ( is => 'rw', isa => 'Str' );
 
+__PACKAGE__->meta->alias_method('h' => __PACKAGE__->can('hue'));
+__PACKAGE__->meta->alias_method('s' => __PACKAGE__->can('saturation'));
+__PACKAGE__->meta->alias_method('l' => __PACKAGE__->can('lightness'));
+
 sub as_string {
     my ($self) = @_;
 

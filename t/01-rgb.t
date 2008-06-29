@@ -1,4 +1,4 @@
-use Test::More tests => 12;
+use Test::More tests => 13;
 
 BEGIN {
     use_ok('Graphics::Color::RGB');
@@ -16,6 +16,7 @@ my $color = Graphics::Color::RGB->new(
 );
 
 cmp_ok($color->red, '==', 1, 'red');
+cmp_ok($color->r, '==', 1, 'red short');
 cmp_ok($color->green, '==', .4, 'green');
 cmp_ok($color->blue, '==', .5, 'blue');
 cmp_ok($color->alpha, '==', 0, 'alpha');
