@@ -1,0 +1,33 @@
+use Test::More tests => 12;
+
+BEGIN {
+    use_ok('Graphics::Color::RGB');
+}
+
+eval {
+    my $color = Graphics::Color::RGB->new(
+        red => 10, green => .4, blue => .5, alpha => 0
+    );
+};
+ok(defined($@), 'less than/equal to 1');
+
+my $color = Graphics::Color::RGB->new(
+    red => 1, green => .4, blue => .5, alpha => 0
+);
+
+cmp_ok($color->red, '==', 1, 'red');
+cmp_ok($color->green, '==', .4, 'green');
+cmp_ok($color->blue, '==', .5, 'blue');
+cmp_ok($color->alpha, '==', 0, 'alpha');
+
+my @rgb = $color->as_array();
+is_deeply(\@rgb, [1, .4, .5], 'rgb as array');
+
+my @rgba = $color->as_array_with_alpha();
+is_deeply(\@rgba, [1, .4, .5, 0], 'rgba as array');
+
+cmp_ok($color->as_string(), '==', '1.00,0.40,0.50,0.00', 'as_string');
+
+cmp_ok($color->as_integer_string, 'eq', '255, 102, 127, 0.00', 'integer string');
+cmp_ok($color->as_hex_string(), 'eq', '#ff667f', 'hex string');
+cmp_ok($color->as_percent_string, 'eq', '100%, 40%, 50%, 0.00', 'percent string');
