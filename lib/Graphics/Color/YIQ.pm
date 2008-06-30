@@ -1,7 +1,7 @@
 package Graphics::Color::YIQ;
 use Moose;
 
-use Graphics::Color;
+extends qw(Graphics::Color);
 
 has 'luminance' => ( is => 'rw', isa => 'Num', default => 1 );
 has 'in_phase' => ( is => 'rw', isa => 'Num', default => 1 );

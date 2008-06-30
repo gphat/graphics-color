@@ -1,7 +1,7 @@
 package Graphics::Color::HSL;
 use Moose;
 
-use Graphics::Color;
+extends qw(Graphics::Color);
 
 has 'hue' => ( is => 'rw', isa => 'Number360OrLess', default => 1 );
 has 'saturation' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );

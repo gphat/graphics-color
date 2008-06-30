@@ -1,7 +1,7 @@
 package Graphics::Color::CMYK;
 use Moose;
 
-use Graphics::Color;
+extends qw(Graphics::Color);
 
 has 'cyan' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );
 has 'magenta' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );

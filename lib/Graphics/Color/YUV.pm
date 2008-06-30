@@ -1,7 +1,7 @@
 package Graphics::Color::YUV;
 use Moose;
 
-use Graphics::Color;
+extends qw(Graphics::Color);
 
 has 'luma' => ( is => 'rw', isa => 'NumberOneOrLess', default => 0 );
 has 'blue_luminance' => ( is => 'rw', isa => 'NumberOneOrLess', default => 0 );

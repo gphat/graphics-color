@@ -1,7 +1,7 @@
 package Graphics::Color::RGB;
 use Moose;
 
-use Graphics::Color;
+extends qw(Graphics::Color);
 
 has 'red' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );
 has 'green' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );
