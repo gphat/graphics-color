@@ -9,6 +9,7 @@ build_requires 'Test::More';
 test_requires 'Pod::Coverage::Moose';
 
 requires 'Moose';
+requires 'MooseX::Clone';
 
 auto_install;
 

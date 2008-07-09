@@ -1,5 +1,8 @@
 Revision history for Graphics-Color
 
+0.02    
+  - Add MooseX::Clone for clone() support in all colors
+
 0.01    Date/time
         First version, released on an unsuspecting world.
 

@@ -2,8 +2,10 @@ package Graphics::Color;
 use Moose;
 use Moose::Util::TypeConstraints;
 
+with 'MooseX::Clone';
+
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 subtype 'Number360OrLess'
     => as 'Num',
