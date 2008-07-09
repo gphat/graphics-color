@@ -34,6 +34,7 @@ sub as_array {
 #
 # http://www.fourcc.org/fccyvrgb.php
 
+no Moose;
 1;
 __END__
 
@@ -105,11 +106,13 @@ Get the YIQ values as an array
 
 =head1 AUTHOR
 
-Cory Watson, C<< <cory.watson at iinteractive.com> >>
+Cory Watson, C<< <gphat@cpan.org> >>
+
+Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 
-perl(1), L<Wikipedia|http://en.wikipedia.org/wiki/YIQ>
+perl(1), L<Wikipedia|http://en.wikipedia.org/wiki/YUV>
 
 =head1 COPYRIGHT & LICENSE
 

@@ -42,6 +42,7 @@ sub as_array_with_alpha {
     return ($self->hue, $self->saturation, $self->lightness, $self->alpha);
 }
 
+no Moose;
 1;
 __END__
 
@@ -122,7 +123,9 @@ Get the HSLA values as an array
 
 =head1 AUTHOR
 
-Cory Watson, C<< <cory.watson at iinteractive.com> >>
+Cory Watson, C<< <gphat@cpan.org> >>
+
+Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 

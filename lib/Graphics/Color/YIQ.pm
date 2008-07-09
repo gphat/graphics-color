@@ -26,6 +26,7 @@ sub as_array {
     return ($self->luminance, $self->in_phase, $self->quadrature);
 }
 
+no Moose;
 1;
 __END__
 
@@ -97,7 +98,9 @@ Get the YIQ values as an array
 
 =head1 AUTHOR
 
-Cory Watson, C<< <cory.watson at iinteractive.com> >>
+Cory Watson, C<< <gphat@cpan.org> >>
+
+Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 

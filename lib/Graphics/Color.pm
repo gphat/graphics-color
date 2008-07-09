@@ -14,6 +14,8 @@ subtype 'NumberOneOrLess'
     => where { $_ <= 1 && $_ >= 0 },
     => message { "This number ($_) is not less or equal to one!" };
 
+no Moose;
+1;
 __END__
 
 =head1 NAME
@@ -27,7 +29,7 @@ Version 0.01
 =head1 SYNOPSIS
 
 Graphics color is a device and library agnostic system for creating and
-manipulating colors.
+manipulating colors in various color spaces.
 
   my $color = Graphics::Color::RGB->new(
       red => .5, green => .5, blue => .5, alpha => .5
@@ -45,15 +47,21 @@ more color spaces as well as conversion routines (where applicable).
 
 The following color types are supported.
 
-L<RGB|Graphics::Color::RGB>
+L<CMYK|Graphics::Color::CMYK>
 
 L<HSL|Graphics::Color::HSL>
 
-L<HSL|Graphics::Color::CMYK>
+L<RGB|Graphics::Color::RGB>
+
+L<YIQ|Graphics::Color::YIQ>
+
+L<YUV|Graphics::Color::YUV>
 
 =head1 AUTHOR
 
-Cory G Watson, C<< <cory.watson at iinteractive.com> >>
+Cory G Watson, C<< <gphat@cpan.org> >>
+
+Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 BUGS
 
@@ -71,5 +79,3 @@ This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
 =cut
-
-1;
