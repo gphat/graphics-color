@@ -27,7 +27,7 @@ is_deeply(\@rgb, [1, .4, .5], 'rgb as array');
 my @rgba = $color->as_array_with_alpha();
 is_deeply(\@rgba, [1, .4, .5, 0], 'rgba as array');
 
-cmp_ok($color->as_string(), '==', '1.00,0.40,0.50,0.00', 'as_string');
+cmp_ok($color->as_string(), 'eq', '1.00,0.40,0.50,0.00', 'as_string');
 
 cmp_ok($color->as_integer_string, 'eq', '255, 102, 127, 0.00', 'integer string');
 cmp_ok($color->as_hex_string(), 'eq', '#ff667f', 'hex string');

@@ -16,4 +16,4 @@ cmp_ok($color->quadrature, '==', .5, 'lightness');
 my @yiq = $color->as_array();
 is_deeply(\@yiq, [1, .4, .5], 'yiq as array');
 
-cmp_ok($color->as_string(), '==', '1,.4,.5', 'as_string');
+cmp_ok($color->as_string(), 'eq', '1,0.4,0.5', 'as_string');

@@ -26,6 +26,6 @@ is_deeply(\@hsl, [120, .4, .5], 'hsl as array');
 my @hsla = $color->as_array_with_alpha();
 is_deeply(\@hsla, [120, .4, .5, 0], 'hsla as array');
 
-cmp_ok($color->as_string(), '==', '120,0.40,0.50,0.00', 'as_string');
+cmp_ok($color->as_string(), 'eq', '120,0.40,0.50,0.00', 'as_string');
 
 cmp_ok($color->as_percent_string, 'eq', '120, 40%, 50%, 0.00', 'percent string');

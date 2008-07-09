@@ -16,4 +16,4 @@ cmp_ok($color->red_luminance, '==', .2, 'red');
 my @yuv = $color->as_array();
 is_deeply(\@yuv, [1, .5, .2], 'yiq as array');
 
-cmp_ok($color->as_string(), '==', '1,.5,.2', 'as_string');
+cmp_ok($color->as_string(), 'eq', '1,0.5,0.2', 'as_string');
