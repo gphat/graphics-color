@@ -95,56 +95,61 @@ Creates a new Graphics::Color::RGB.
 
 =back
 
-=head2 Class Methods
+=head2 Instance Methods
 
 =over 4
 
-=item red
+=item I<red>
+
+=item I<r>
 
 Set/Get the red component of this Color.  Aliased to a 'r' as well.
 
-=item green
+=item I<green>
+
+=item I<g>
 
 Set/Get the green component of this Color. Aliased to a 'g' as well.
 
-=item blue
+=item I<blue>
+
+=item I<g>
 
 Set/Get the blue component of this Color. Aliased to a 'b' as well.
 
-=item alpha
+=item I<alpha>
 
 Set/Get the alpha component of this Color. Aliased to a 'a' as well.
 
-=item name
+=item I<name>
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item as_string
+=item I<s_string>
 
 Get a string version of this Color in the form of RED,GREEN,BLUE,ALPHA
 
-=item as_hex_string
+=item I<as_hex_string>
 
 Return a hex formatted value for this color.  The output ignores the alpha
 channel because, per the W3C, there is no hexadecimal notiation for an RGBA
 value.
 
-=item as_integer_string
+=item I<as_integer_string>
 
 Return an integer formatted value for this color.  This format is suitable for
 CSS RGBA values.
 
-=item as_percent_string
+=item I<as_percent_string>
 
 Return a percent formatted value for this color.  This format is suitable for
 CSS RGBA values.
 
-
-=item as_array
+=item I<as_array>
 
 Get the RGB values as an array
 
-=item as_array_with_alpha
+=item I<as_array_with_alpha>
 
 Get the RGBA values as an array
 

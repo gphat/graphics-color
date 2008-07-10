@@ -1,5 +1,10 @@
 Revision history for Graphics-Color
 
+0.03
+  - Fix YUV's POD referring to YIQ
+  - Add POD for aliased methods
+  - Fix description
+
 0.02    
   - Add MooseX::Clone for clone() support in all colors
 

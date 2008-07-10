@@ -46,16 +46,11 @@ Graphics::Color::YUV
 
 Graphics::Color::YUV represents a Color in an Y'UV color space.
 
-=head1 DISCLAIMER
-
-I couldn't find clear information on the bounds of each value, so at the
-moment there are only 
-
 =head1 SYNOPSIS
 
-    use Graphics::Color::YIQ;
+    use Graphics::Color::YUV;
 
-    my $color = Graphics::Color::YIQ->new({
+    my $color = Graphics::Color::YUV->new({
         luminance   => 0.5,
         in_phase    => .5
         quadrature  => .25,
@@ -67,40 +62,46 @@ moment there are only
 
 =over 4
 
-=item new
+=item I<new>
 
-Creates a new Graphics::Color::YIQ.
+Creates a new Graphics::Color::YUV.
 
 =back
 
-=head2 Class Methods
+=head2 Instance Methods
 
 =over 4
 
-=item luminance
+=item I<luminance>
+
+=item I<y>
 
 Set/Get the luma (Y') component of this Color.  Aliased to y.
 
-=item blue_luminance
+=item I<blue_luminance>
+
+=item I<u>
 
 Set/Get the blue_luminance component of this Color. Aliased to u.
 
-=item red_luminance
+=item I<red_luminance>
+
+=item I<v>
 
 Set/Get the red_luminance component of this Color. Aliased to v.
 
-=item name
+=item I<name>
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item as_string
+=item I<as_string>
 
 Get a string version of this Color in the form of
-LUMINANCE,IN-PHASE,QUADRATURE
+LUMA,BLUE_LUMINENCE,RED_LUMINANCE
 
-=item as_array
+=item I<as_array>
 
-Get the YIQ values as an array
+Get the YUV values as an array
 
 =back
 

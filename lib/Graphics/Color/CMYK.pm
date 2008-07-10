@@ -67,46 +67,54 @@ B<Cyan> B<Magenta> B<Yellow> B<Key> (or black).
 
 =over 4
 
-=item new
+=item I<new>
 
 Creates a new Graphics::Color::CMYK.
 
 =back
 
-=head2 Class Methods
+=head2 Instance Methods
 
 =over 4
 
-=item cyan
+=item I<cyan>
+
+=item I<c>
 
 Set/Get the cyan component of this Color.
 
-=item magenta
+=item I<magenta>
+
+=item I<m>
 
 Set/Get the magenta component of this Color.
 
-=item yellow
+=item I<yellow>
+
+=item I<y>
 
 Set/Get the yellow component of this Color.
 
-=item key
+=item I<key>
+
+=item I<k>
 
 Set/Get the key (black) component of this Color.
 
-=item name
+=item I<name>
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item as_string
+=item I<as_string>
 
 Get a string version of this Color in the form of
 CYAN,MAGENTA,YELLOW,KEY
 
-=item as_percent_string
+=item I<as_percent_string>
 
 Return a percent formatted value for this color.
 
-=item as_array
+=item I<as_array>
 
 Get the CMYK values as an array
 

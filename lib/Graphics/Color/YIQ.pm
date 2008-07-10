@@ -59,38 +59,44 @@ moment there are only
 
 =over 4
 
-=item new
+=item I<new>
 
 Creates a new Graphics::Color::YIQ.
 
 =back
 
-=head2 Class Methods
+=head2 Instance Methods
 
 =over 4
 
-=item luminance
+=item I<luminance>
+
+=item I<y>
 
 Set/Get the luminance component of this Color.
 
-=item in_phase
+=item I<in_phase>
+
+=item I<i>
 
 Set/Get the in_phase component of this Color.
 
-=item quadrature
+=item I<quadrature>
+
+=item I<q>
 
 Set/Get the quadrature component of this Color.
 
-=item name
+=item I<name>
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item as_string
+=item I<as_string>
 
 Get a string version of this Color in the form of
 LUMINANCE,IN-PHASE,QUADRATURE
 
-=item as_array
+=item I<as_array>
 
 Get the YIQ values as an array
 

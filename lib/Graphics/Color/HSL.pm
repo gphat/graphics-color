@@ -77,45 +77,51 @@ Creates a new Graphics::Color::HSL.
 
 =back
 
-=head2 Class Methods
+=head2 Instance Methods
 
 =over 4
 
-=item hue
+=item I<hue>
+
+=item I<h>
 
 Set/Get the hue component of this Color.
 
-=item saturation
+=item I<saturation>
+
+=item I<s>
 
 Set/Get the saturation component of this Color.
 
-=item lightness
+=item I<lightness>
+
+=item I<l>
 
 Set/Get the lightness component of this Color.
 
-=item alpha
+=item I<alpha>
 
 Set/Get the alpha component of this Color.
 
-=item name
+=item I<name>
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item as_string
+=item I<as_string>
 
 Get a string version of this Color in the form of
 HUE,SATURATION,LIGHTNESS,ALPHA
 
-=item as_percent_string
+=item I<as_percent_string>
 
 Return a percent formatted value for this color.  This format is suitable for
 CSS HSL values.
 
-=item as_array
+=item I<as_array>
 
 Get the HSL values as an array
 
-=item as_array_with_alpha
+=item I<as_array_with_alpha>
 
 Get the HSLA values as an array
 
