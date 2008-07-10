@@ -125,7 +125,7 @@ Set/Get the alpha component of this Color. Aliased to a 'a' as well.
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item I<s_string>
+=item I<as_string>
 
 Get a string version of this Color in the form of RED,GREEN,BLUE,ALPHA
 
