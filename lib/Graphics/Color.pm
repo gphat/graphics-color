@@ -5,7 +5,7 @@ use Moose::Util::TypeConstraints;
 with 'MooseX::Clone';
 
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 subtype 'Number360OrLess'
     => as 'Num',
@@ -24,10 +24,6 @@ __END__
 =head1 NAME
 
 Graphics::Color - Device and library agnostic color spaces.
-
-=head1 VERSION
-
-Version 0.01
 
 =head1 SYNOPSIS
 

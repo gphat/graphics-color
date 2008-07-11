@@ -1,5 +1,7 @@
 Revision history for Graphics-Color
 
+0.04
+  - Add MI version because Yuval yelled at me
 0.03
   - Fix YUV's POD referring to YIQ
   - Add POD for aliased methods
