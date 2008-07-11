@@ -51,9 +51,9 @@ Graphics::Color::YUV represents a Color in an Y'UV color space.
     use Graphics::Color::YUV;
 
     my $color = Graphics::Color::YUV->new({
-        luminance   => 0.5,
-        in_phase    => .5
-        quadrature  => .25,
+        luma            => .5,
+        blue_luminance  => .5
+        red_luminance   => .25,
     });
 
 =head1 METHODS
@@ -72,7 +72,7 @@ Creates a new Graphics::Color::YUV.
 
 =over 4
 
-=item I<luminance>
+=item I<luma>
 
 =item I<y>
 

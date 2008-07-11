@@ -113,11 +113,13 @@ Set/Get the green component of this Color. Aliased to a 'g' as well.
 
 =item I<blue>
 
-=item I<g>
+=item I<b>
 
 Set/Get the blue component of this Color. Aliased to a 'b' as well.
 
 =item I<alpha>
+
+=item I<a>
 
 Set/Get the alpha component of this Color. Aliased to a 'a' as well.
 
