@@ -5,14 +5,14 @@ use Moose::Util::TypeConstraints;
 with 'MooseX::Clone';
 
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
-subtype 'Number360OrLess'
+subtype 'Graphics::Color::Number360OrLess'
     => as 'Num',
     => where { $_ <= 360 && $_ >= 0 },
     => message { "This number ($_) is not less than or equal to 360!" };
 
-subtype 'NumberOneOrLess'
+subtype 'Graphics::Color::NumberOneOrLess'
     => as 'Num',
     => where { $_ <= 1 && $_ >= 0 },
     => message { "This number ($_) is not less or equal to one!" };

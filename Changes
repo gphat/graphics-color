@@ -1,5 +1,8 @@
 Revision history for Graphics-Color
 
+0.05
+  - Name types with Graphics::Color:: prefix
+
 0.04
   - Add MI version because Yuval yelled at me
   - More POD fixes

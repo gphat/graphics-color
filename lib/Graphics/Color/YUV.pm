@@ -3,9 +3,9 @@ use Moose;
 
 extends qw(Graphics::Color);
 
-has 'luma' => ( is => 'rw', isa => 'NumberOneOrLess', default => 0 );
-has 'blue_luminance' => ( is => 'rw', isa => 'NumberOneOrLess', default => 0 );
-has 'red_luminance' => ( is => 'rw', isa => 'NumberOneOrLess', default => 0 );
+has 'luma' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 0 );
+has 'blue_luminance' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 0 );
+has 'red_luminance' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 0 );
 has 'name' => ( is => 'rw', isa => 'Str' );
 
 __PACKAGE__->meta->alias_method('y' => __PACKAGE__->can('luma'));

@@ -3,10 +3,10 @@ use Moose;
 
 extends qw(Graphics::Color);
 
-has 'red' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );
-has 'green' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );
-has 'blue' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );
-has 'alpha' => ( is => 'rw', isa => 'NumberOneOrLess', default => 1 );
+has 'red' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
+has 'green' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
+has 'blue' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
+has 'alpha' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'name' => ( is => 'rw', isa => 'Str' );
 
 __PACKAGE__->meta->alias_method('r' => __PACKAGE__->can('red'));

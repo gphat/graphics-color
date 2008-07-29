@@ -1,5 +1,4 @@
 Changes
-Graphics-Color-0.03.tar.gz
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -18,7 +17,7 @@ lib/Graphics/Color/RGB.pm
 lib/Graphics/Color/YIQ.pm
 lib/Graphics/Color/YUV.pm
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
 META.yml
 README
 t/00-load.t
