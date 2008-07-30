@@ -1,5 +1,9 @@
 Revision history for Graphics-Color
 
+0.06
+  - Add make_immutable
+  - Put versions on Moose & MooseX::Clone
+
 0.05
   - Name types with Graphics::Color:: prefix
 

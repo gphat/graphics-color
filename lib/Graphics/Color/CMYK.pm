@@ -37,6 +37,8 @@ sub as_array {
     return ($self->cyan, $self->magenta, $self->yellow, $self->key);
 }
 
+__PACKAGE__->meta->make_immutable;
+
 no Moose;
 1;
 __END__

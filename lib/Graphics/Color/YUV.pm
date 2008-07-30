@@ -34,6 +34,8 @@ sub as_array {
 #
 # http://www.fourcc.org/fccyvrgb.php
 
+__PACKAGE__->meta->make_immutable;
+
 no Moose;
 1;
 __END__

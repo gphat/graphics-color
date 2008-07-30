@@ -42,6 +42,8 @@ sub as_array_with_alpha {
     return ($self->hue, $self->saturation, $self->lightness, $self->alpha);
 }
 
+__PACKAGE__->meta->make_immutable;
+
 no Moose;
 1;
 __END__

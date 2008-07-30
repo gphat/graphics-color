@@ -5,7 +5,7 @@ use Moose::Util::TypeConstraints;
 with 'MooseX::Clone';
 
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 subtype 'Graphics::Color::Number360OrLess'
     => as 'Num',
@@ -16,6 +16,8 @@ subtype 'Graphics::Color::NumberOneOrLess'
     => as 'Num',
     => where { $_ <= 1 && $_ >= 0 },
     => message { "This number ($_) is not less or equal to one!" };
+
+__PACKAGE__->meta->make_immutable;
 
 no Moose;
 1;

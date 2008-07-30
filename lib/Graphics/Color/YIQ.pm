@@ -26,6 +26,8 @@ sub as_array {
     return ($self->luminance, $self->in_phase, $self->quadrature);
 }
 
+__PACKAGE__->meta->make_immutable;
+
 no Moose;
 1;
 __END__
