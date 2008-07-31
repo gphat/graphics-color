@@ -5,7 +5,7 @@ use Moose::Util::TypeConstraints;
 with 'MooseX::Clone';
 
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 subtype 'Graphics::Color::Number360OrLess'
     => as 'Num',
@@ -57,6 +57,12 @@ L<RGB|Graphics::Color::RGB>
 L<YIQ|Graphics::Color::YIQ>
 
 L<YUV|Graphics::Color::YUV>
+
+=head1 METHODS
+
+=head1 I<new>
+
+Makes a new, useless Graphics::Color object. There's no reason to do this.
 
 =head1 AUTHOR
 

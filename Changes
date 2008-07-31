@@ -1,5 +1,8 @@
 Revision history for Graphics-Color
 
+0.07
+  - Add some POD to appease testers.
+
 0.06
   - Add make_immutable
   - Put versions on Moose & MooseX::Clone
