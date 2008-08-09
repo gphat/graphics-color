@@ -1,4 +1,4 @@
-use Test::More tests => 13;
+use Test::More tests => 15;
 
 BEGIN {
     use_ok('Graphics::Color::RGB');
@@ -21,14 +21,18 @@ cmp_ok($color->green, '==', .4, 'green');
 cmp_ok($color->blue, '==', .5, 'blue');
 cmp_ok($color->alpha, '==', 0, 'alpha');
 
-my @rgb = $color->as_array();
+my @rgb = $color->as_array;
 is_deeply(\@rgb, [1, .4, .5], 'rgb as array');
 
-my @rgba = $color->as_array_with_alpha();
+my @rgba = $color->as_array_with_alpha;
 is_deeply(\@rgba, [1, .4, .5, 0], 'rgba as array');
 
-cmp_ok($color->as_string(), 'eq', '1.00,0.40,0.50,0.00', 'as_string');
+cmp_ok($color->as_string, 'eq', '1.00,0.40,0.50,0.00', 'as_string');
 
 cmp_ok($color->as_integer_string, 'eq', '255, 102, 127, 0.00', 'integer string');
-cmp_ok($color->as_hex_string(), 'eq', '#ff667f', 'hex string');
+cmp_ok($color->as_hex_string, 'eq', '#ff667f', 'hex string');
 cmp_ok($color->as_percent_string, 'eq', '100%, 40%, 50%, 0.00', 'percent string');
+
+my $new = $color->derive({red => 1});
+cmp_ok($new->red, '==', 1, 'derived color, red');
+cmp_ok($new->blue, '==', .5, 'derived color, blue');

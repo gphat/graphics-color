@@ -17,6 +17,17 @@ subtype 'Graphics::Color::NumberOneOrLess'
     => where { $_ <= 1 && $_ >= 0 },
     => message { "This number ($_) is not less or equal to one!" };
 
+sub derive {
+    my ($self, $args) = @_;
+
+    return unless ref($args) eq 'HASH';
+    my $new = $self->clone;
+    foreach my $key (keys %{ $args }) {
+        $new->$key($args->{$key}) if($new->can($key));
+    }
+    return $new;
+}
+
 __PACKAGE__->meta->make_immutable;
 
 no Moose;
@@ -63,6 +74,16 @@ L<YUV|Graphics::Color::YUV>
 =head1 I<new>
 
 Makes a new, useless Graphics::Color object. There's no reason to do this.
+
+=head1 I<derive>
+
+Clone this color but allow one of more of it's attributes to change by passing
+in a hashref of options:
+
+  my $new = $color->derive({ attr => $newvalue });
+  
+The returned color will be identical to the cloned one, save the attributes
+specified.
 
 =head1 AUTHOR
 
