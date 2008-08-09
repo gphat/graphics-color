@@ -50,7 +50,7 @@ __END__
 
 =head1 NAME
 
-Graphics::Color::HSL
+Graphics::Color::HSL - HSL color space
 
 =head1 DESCRIPTION
 

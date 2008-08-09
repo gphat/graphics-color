@@ -71,11 +71,13 @@ L<YUV|Graphics::Color::YUV>
 
 =head1 METHODS
 
-=head1 I<new>
+=over 4
+
+=item I<new>
 
 Makes a new, useless Graphics::Color object. There's no reason to do this.
 
-=head1 I<derive>
+=item I<derive>
 
 Clone this color but allow one of more of it's attributes to change by passing
 in a hashref of options:
@@ -84,6 +86,8 @@ in a hashref of options:
   
 The returned color will be identical to the cloned one, save the attributes
 specified.
+
+=back
 
 =head1 AUTHOR
 

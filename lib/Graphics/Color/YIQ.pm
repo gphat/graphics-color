@@ -34,7 +34,7 @@ __END__
 
 =head1 NAME
 
-Graphics::Color::YIQ
+Graphics::Color::YIQ - YIQ color space
 
 =head1 DESCRIPTION
 

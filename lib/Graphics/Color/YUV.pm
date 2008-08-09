@@ -42,7 +42,7 @@ __END__
 
 =head1 NAME
 
-Graphics::Color::YUV
+Graphics::Color::YUV - YUV color space
 
 =head1 DESCRIPTION
 

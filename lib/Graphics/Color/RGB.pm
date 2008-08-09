@@ -67,7 +67,7 @@ __END__
 
 =head1 NAME
 
-Graphics::Color::RGB
+Graphics::Color::RGB - RGB color model
 
 =head1 DESCRIPTION
 

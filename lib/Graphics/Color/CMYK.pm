@@ -45,7 +45,7 @@ __END__
 
 =head1 NAME
 
-Graphics::Color::CMYK
+Graphics::Color::CMYK - CMYK color model
 
 =head1 DESCRIPTION
 
