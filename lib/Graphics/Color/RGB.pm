@@ -3,8 +3,6 @@ use Moose;
 
 extends qw(Graphics::Color);
 
-# with 'Graphics::Color::Equal';
-
 has 'red' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'green' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'blue' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
