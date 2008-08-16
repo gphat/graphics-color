@@ -1,5 +1,8 @@
 Revision history for Graphics-Color
 
+0.10
+  - Return 0 if arg to equal_to is undefined.
+
 0.09
   - Add equal_to and not_equal_to to all color spaces.
 

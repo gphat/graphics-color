@@ -29,6 +29,8 @@ sub as_array {
 sub equal_to {
     my ($self, $other) = @_;
 
+    return 0 unless defined($other);
+
     unless($self->luma == $other->luma) {
         return 0;
     }

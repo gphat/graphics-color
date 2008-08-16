@@ -47,6 +47,8 @@ sub as_array_with_alpha {
 sub equal_to {
     my ($self, $other) = @_;
 
+    return 0 unless defined($other);
+
     unless($self->hue == $other->hue) {
         return 0;
     }

@@ -31,6 +31,8 @@ __PACKAGE__->meta->make_immutable;
 sub equal_to {
     my ($self, $other) = @_;
 
+    return 0 unless defined($other);
+
     unless($self->luminance == $other->luminance) {
         return 0;
     }
