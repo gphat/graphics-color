@@ -12,6 +12,7 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Graphics/Color.pm
 lib/Graphics/Color/CMYK.pm
+lib/Graphics/Color/Equal.pm
 lib/Graphics/Color/HSL.pm
 lib/Graphics/Color/RGB.pm
 lib/Graphics/Color/YIQ.pm
