@@ -2,7 +2,7 @@ package Graphics::Color;
 use Moose;
 use Moose::Util::TypeConstraints;
 
-with 'MooseX::Clone';
+with qw(MooseX::Clone Graphics::Color::Equal);
 
 our $AUTHORITY = 'cpan:GPHAT';
 our $VERSION = '0.08';
@@ -26,6 +26,10 @@ sub derive {
         $new->$key($args->{$key}) if($new->can($key));
     }
     return $new;
+}
+
+sub equal_to {
+    die("Override me!");
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -86,6 +90,14 @@ in a hashref of options:
   
 The returned color will be identical to the cloned one, save the attributes
 specified.
+
+=item I<equal_to>
+
+Compares this color to the provided one.  Returns 1 if true, else 0;
+
+=item I<not_equal_to>
+
+The opposite of equal_to.
 
 =back
 

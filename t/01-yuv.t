@@ -1,4 +1,4 @@
-use Test::More tests => 7;
+use Test::More tests => 9;
 
 BEGIN {
     use_ok('Graphics::Color::YUV');
@@ -17,3 +17,9 @@ my @yuv = $color->as_array();
 is_deeply(\@yuv, [1, .5, .2], 'yiq as array');
 
 cmp_ok($color->as_string(), 'eq', '1,0.5,0.2', 'as_string');
+
+my $color2 = $color->clone;
+ok($color2->equal_to($color), 'equal_to');
+
+my $color3 = $color2->derive({ luma => .9 });
+ok($color3->not_equal_to($color2), 'not_equal_to');

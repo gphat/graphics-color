@@ -26,6 +26,22 @@ sub as_array {
     return ($self->luma, $self->blue_luminance, $self->red_luminance);
 }
 
+sub equal_to {
+    my ($self, $other) = @_;
+
+    unless($self->luma == $other->luma) {
+        return 0;
+    }
+    unless($self->blue_luminance == $other->blue_luminance) {
+        return 0;
+    }
+    unless($self->red_luminance == $other->red_luminance) {
+        return 0;
+    }
+
+    return 1;
+}
+
 # TODO RGB Conversion
 # OLD STYLE : Y' = 0.299R + 0.587G + 0.114B
 # NEW STYLE: Y' = 0.2125R + 0.7154G + 0.0721B
@@ -73,6 +89,14 @@ Creates a new Graphics::Color::YUV.
 =head2 Instance Methods
 
 =over 4
+
+=item I<equal_to>
+
+Compares this color to the provided one.  Returns 1 if true, else 0;
+
+=item I<not_equal_to>
+
+The opposite of equal_to.
 
 =item I<luma>
 

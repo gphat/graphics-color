@@ -3,6 +3,8 @@ use Moose;
 
 extends qw(Graphics::Color);
 
+# with 'Graphics::Color::Equal';
+
 has 'red' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'green' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'blue' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
@@ -59,6 +61,25 @@ sub as_array_with_alpha {
     return ($self->red(), $self->green(), $self->blue(), $self->alpha());
 }
 
+sub equal_to {
+    my ($self, $other) = @_;
+
+    unless($self->red == $other->red) {
+        return 0;
+    }
+    unless($self->green == $other->green) {
+        return 0;
+    }
+    unless($self->blue == $other->blue) {
+        return 0;
+    }
+    unless($self->alpha == $other->alpha) {
+        return 0;
+    }
+
+    return 1;
+}
+
 __PACKAGE__->meta->make_immutable;
 
 no Moose;
@@ -100,6 +121,14 @@ Creates a new Graphics::Color::RGB.
 =head2 Instance Methods
 
 =over 4
+
+=item I<equal_to>
+
+Compares this color to the provided one.  Returns 1 if true, else 0;
+
+=item I<not_equal_to>
+
+The opposite of equal_to.
 
 =item I<red>
 

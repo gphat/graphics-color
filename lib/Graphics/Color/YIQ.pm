@@ -28,6 +28,22 @@ sub as_array {
 
 __PACKAGE__->meta->make_immutable;
 
+sub equal_to {
+    my ($self, $other) = @_;
+
+    unless($self->luminance == $other->luminance) {
+        return 0;
+    }
+    unless($self->in_phase == $other->in_phase) {
+        return 0;
+    }
+    unless($self->quadrature == $other->quadrature) {
+        return 0;
+    }
+
+    return 1;
+}
+
 no Moose;
 1;
 __END__
@@ -70,6 +86,14 @@ Creates a new Graphics::Color::YIQ.
 =head2 Instance Methods
 
 =over 4
+
+=item I<equal_to>
+
+Compares this color to the provided one.  Returns 1 if true, else 0;
+
+=item I<not_equal_to>
+
+The opposite of equal_to.
 
 =item I<luminance>
 

@@ -37,6 +37,25 @@ sub as_array {
     return ($self->cyan, $self->magenta, $self->yellow, $self->key);
 }
 
+sub equal_to {
+    my ($self, $other) = @_;
+
+    unless($self->cyan == $other->cyan) {
+        return 0;
+    }
+    unless($self->magenta == $other->magenta) {
+        return 0;
+    }
+    unless($self->yellow == $other->yellow) {
+        return 0;
+    }
+    unless($self->key == $other->key) {
+        return 0;
+    }
+
+    return 1;
+}
+
 __PACKAGE__->meta->make_immutable;
 
 no Moose;
@@ -84,6 +103,14 @@ Creates a new Graphics::Color::CMYK.
 =item I<c>
 
 Set/Get the cyan component of this Color.
+
+=item I<equal_to>
+
+Compares this color to the provided one.  Returns 1 if true, else 0;
+
+=item I<not_equal_to>
+
+The opposite of equal_to.
 
 =item I<magenta>
 

@@ -1,4 +1,4 @@
-use Test::More tests => 10;
+use Test::More tests => 12;
 
 BEGIN {
     use_ok('Graphics::Color::HSL');
@@ -29,3 +29,9 @@ is_deeply(\@hsla, [120, .4, .5, 0], 'hsla as array');
 cmp_ok($color->as_string(), 'eq', '120,0.40,0.50,0.00', 'as_string');
 
 cmp_ok($color->as_percent_string, 'eq', '120, 40%, 50%, 0.00', 'percent string');
+
+my $color2 = $color->clone;
+ok($color2->equal_to($color), 'equal_to');
+
+my $color3 = $color2->derive({ saturation => .9 });
+ok($color3->not_equal_to($color2), 'not_equal_to');

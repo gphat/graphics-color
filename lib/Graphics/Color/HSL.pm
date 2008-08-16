@@ -3,6 +3,8 @@ use Moose;
 
 extends qw(Graphics::Color);
 
+with 'Graphics::Color::Equal';
+
 has 'hue' => ( is => 'rw', isa => 'Graphics::Color::Number360OrLess', default => 1 );
 has 'saturation' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'lightness' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
@@ -40,6 +42,25 @@ sub as_array_with_alpha {
     my ($self) = @_;
 
     return ($self->hue, $self->saturation, $self->lightness, $self->alpha);
+}
+
+sub equal_to {
+    my ($self, $other) = @_;
+
+    unless($self->hue == $other->hue) {
+        return 0;
+    }
+    unless($self->saturation == $other->saturation) {
+        return 0;
+    }
+    unless($self->lightness == $other->lightness) {
+        return 0;
+    }
+    unless($self->alpha == $other->alpha) {
+        return 0;
+    }
+
+    return 1;
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -82,6 +103,14 @@ Creates a new Graphics::Color::HSL.
 =head2 Instance Methods
 
 =over 4
+
+=item I<equal_to>
+
+Compares this color to the provided one.  Returns 1 if true, else 0;
+
+=item I<not_equal_to>
+
+The opposite of equal_to.
 
 =item I<hue>
 
