@@ -13,7 +13,7 @@ no Moose;
 __END__
 =head1 NAME
 
-Graphics::Color::Equal
+Graphics::Color::Equal - Moose equality role
 
 =head1 DESCRIPTION
 
