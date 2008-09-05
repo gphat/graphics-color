@@ -22,10 +22,10 @@ cmp_ok($color->magenta, '==', .4, 'magenta');
 cmp_ok($color->yellow, '==', .5, 'yellow');
 cmp_ok($color->key, '==', .3, 'key');
 
-my @cmyk = $color->as_array();
+my @cmyk = $color->as_array;
 is_deeply(\@cmyk, [.1, .4, .5, .3], 'cmyk as array');
 
-cmp_ok($color->as_string(), 'eq', '0.10,0.40,0.50,0.30', 'as_string');
+cmp_ok($color->as_string, 'eq', '0.10,0.40,0.50,0.30', 'as_string');
 
 cmp_ok($color->as_percent_string, 'eq', '10%, 40%, 50%, 30%', 'percent string');
 

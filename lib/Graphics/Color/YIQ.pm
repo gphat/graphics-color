@@ -138,7 +138,7 @@ Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 
-perl(1), L<Wikipedia|http://en.wikipedia.org/wiki/YIQ>
+perl(1), L<a href="http://en.wikipedia.org/wiki/YIQ">Wikipedia</a>>
 
 =head1 COPYRIGHT & LICENSE
 

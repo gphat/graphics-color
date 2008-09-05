@@ -3,6 +3,8 @@ use Moose;
 
 extends qw(Graphics::Color);
 
+use Graphics::Color::RGB;
+
 has 'cyan' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'magenta' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'yellow' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
@@ -159,7 +161,7 @@ Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 
-perl(1) L<Wikipedia|http://en.wikipedia.org/wiki/CMYK>
+perl(1) L<<a href="http://en.wikipedia.org/wiki/CMYK">Wikipedia</a>>
 
 =head1 COPYRIGHT & LICENSE
 

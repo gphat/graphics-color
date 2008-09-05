@@ -1,5 +1,9 @@
 Revision history for Graphics-Color
 
+0.13
+  - MooseX::Storage support
+  - Fix POD links to Wikipedia
+
 0.12
   - POD updates
 

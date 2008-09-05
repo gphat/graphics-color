@@ -168,7 +168,7 @@ Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 
-perl(1), L<Wikipedia|http://en.wikipedia.org/wiki/HSL_color_space>
+perl(1), L<<a href="http://en.wikipedia.org/wiki/HSL_color_space">Wikipedia</a>>
 
 =head1 COPYRIGHT & LICENSE
 

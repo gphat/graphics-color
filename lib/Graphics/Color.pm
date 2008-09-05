@@ -1,8 +1,10 @@
 package Graphics::Color;
 use Moose;
 use Moose::Util::TypeConstraints;
+use MooseX::Storage;
 
 with qw(MooseX::Clone Graphics::Color::Equal);
+with Storage (format => 'JSON', io => 'File');
 
 our $AUTHORITY = 'cpan:GPHAT';
 our $VERSION = '0.12';
@@ -50,7 +52,7 @@ manipulating colors in various color spaces.
   my $color = Graphics::Color::RGB->new(
       red => .5, green => .5, blue => .5, alpha => .5
   );
-  say $color->as_string();
+  say $color->as_string;
 
 =head1 DISCLAIMER
 

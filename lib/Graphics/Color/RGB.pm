@@ -18,8 +18,8 @@ sub as_string {
     my ($self) = @_;
 
     return sprintf('%0.2f,%0.2f,%0.2f,%0.2f',
-        $self->red(), $self->green(),
-        $self->blue(), $self->alpha()
+        $self->red, $self->green,
+        $self->blue, $self->alpha
     );
 }
 
@@ -35,7 +35,7 @@ sub as_hex_string {
     my ($self) = @_;
 
     return sprintf('#%x%x%x',
-        $self->red() * 255, $self->green() * 255, $self->blue() * 255
+        $self->red * 255, $self->green * 255, $self->blue * 255
     );
 }
 
@@ -50,13 +50,13 @@ sub as_percent_string {
 sub as_array {
     my ($self) = @_;
 
-    return ($self->red(), $self->green(), $self->blue());
+    return ($self->red, $self->green, $self->blue);
 }
 
 sub as_array_with_alpha {
     my ($self) = @_;
 
-    return ($self->red(), $self->green(), $self->blue(), $self->alpha());
+    return ($self->red, $self->green, $self->blue, $self->alpha);
 }
 
 sub equal_to {
@@ -196,7 +196,7 @@ Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 
-perl(1), L<Wikipedia|http://en.wikipedia.org/wiki/RGB_color_space>
+perl(1), L<<a href="http://en.wikipedia.org/wiki/RGB_color_space">Wikipedia</a>>
 
 =head1 COPYRIGHT & LICENSE
 

@@ -13,10 +13,10 @@ cmp_ok($color->y, '==', 1, 'luminance short');
 cmp_ok($color->in_phase, '==', .4, 'in_phase');
 cmp_ok($color->quadrature, '==', .5, 'lightness');
 
-my @yiq = $color->as_array();
+my @yiq = $color->as_array;
 is_deeply(\@yiq, [1, .4, .5], 'yiq as array');
 
-cmp_ok($color->as_string(), 'eq', '1,0.4,0.5', 'as_string');
+cmp_ok($color->as_string, 'eq', '1,0.4,0.5', 'as_string');
 
 my $color2 = $color->clone;
 ok($color2->equal_to($color), 'equal_to');
