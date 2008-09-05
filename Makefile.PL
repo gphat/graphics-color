@@ -10,6 +10,7 @@ test_requires 'Pod::Coverage::Moose';
 
 requires 'Moose' => '0.54';
 requires 'MooseX::Clone' => '0.03';
+requires 'MooseX::Storage' => '0.14';
 
 auto_install;
 

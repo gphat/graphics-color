@@ -27,6 +27,7 @@ t/01-hsl.t
 t/01-rgb.t
 t/01-yiq.t
 t/01-yuv.t
+t/10-storage.t
 t/pod-coverage.t
 t/pod.t
 TODO

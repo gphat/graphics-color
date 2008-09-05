@@ -1,5 +1,8 @@
 Revision history for Graphics-Color
 
+0.14
+  - Forgot MooseX::Storage dependency
+
 0.13
   - MooseX::Storage support
   - Fix POD links to Wikipedia
