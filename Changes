@@ -1,5 +1,8 @@
 Revision history for Graphics-Color
 
+0.15
+  - Remove Moose Coverage dep
+
 0.14
   - Forgot MooseX::Storage dependency
 
