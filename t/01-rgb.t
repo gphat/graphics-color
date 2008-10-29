@@ -1,4 +1,4 @@
-use Test::More tests => 17;
+use Test::More tests => 35;
 
 BEGIN {
     use_ok('Graphics::Color::RGB');
@@ -41,3 +41,36 @@ cmp_ok($new->green, '==', 1, 'derived color, green');
 cmp_ok($new->blue, '==', .5, 'derived color, blue');
 
 ok(!$new->equal_to($color), 'not equal_to');
+
+my $rgb1 = new Graphics::Color::RGB->new(red => 1, green => 0, blue => 0);
+my $hsl1 = $rgb1->to_hsl;
+cmp_ok($hsl1->h, '==', 0, 'HSL conversion: H');
+cmp_ok($hsl1->s, '==', 1, 'HSL conversion: S');
+cmp_ok($hsl1->l, '==', .5, 'HSL conversion: L');
+
+my $hsv1 = $rgb1->to_hsv;
+cmp_ok($hsv1->h, '==', 0, 'HSV conversion: H');
+cmp_ok($hsv1->s, '==', 1, 'HSV conversion: S');
+cmp_ok($hsv1->v, '==', 1, 'HSV conversion: V');
+
+my $rgb2 = new Graphics::Color::RGB->new(red => .5, green => 1, blue => .5);
+my $hsl2 = $rgb2->to_hsl;
+cmp_ok($hsl2->h, '==', 120, 'HSV conversion: H');
+cmp_ok($hsl2->s, '==', 1, 'HSV conversion: S');
+cmp_ok($hsl2->l, '==', .75, 'HSV conversion: V');
+
+my $hsv2 = $rgb2->to_hsv;
+cmp_ok($hsv2->h, '==', 120, 'HSV conversion: H');
+cmp_ok($hsv2->s, '==', .5, 'HSV conversion: S');
+cmp_ok($hsv2->v, '==', 1, 'HSV conversion: V');
+
+my $rgb3 = new Graphics::Color::RGB->new(red => 0, green => 0, blue => .5);
+my $hsl3 = $rgb3->to_hsl;
+cmp_ok($hsl3->h, '==', 240, 'HSL conversion: H');
+cmp_ok($hsl3->s, '==', 1, 'HSL conversion: S');
+cmp_ok($hsl3->l, '==', .25, 'HSL conversion: L');
+
+my $hsv3 = $rgb3->to_hsv;
+cmp_ok($hsv3->h, '==', 240, 'HSV conversion: H');
+cmp_ok($hsv3->s, '==', 1, 'HSV conversion: S');
+cmp_ok($hsv3->v, '==', .5, 'HSV conversion: V');

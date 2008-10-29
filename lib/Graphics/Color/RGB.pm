@@ -1,9 +1,11 @@
 package Graphics::Color::RGB;
 use Moose;
 
-use Color::Library;
-
 extends qw(Graphics::Color);
+
+use Color::Library;
+use Graphics::Color::HSL;
+use Graphics::Color::HSV;
 
 has 'red' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'green' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
@@ -100,6 +102,103 @@ sub from_color_library {
 		red => $r / 255,
 		green => $g / 255,
 		blue => $b / 255
+	);
+}
+
+sub to_hsl {
+	my ($self) = @_;
+
+	my $max = $self->red;
+	my $maxc = 'r';
+	my $min = $self->red;
+
+	if($self->green > $max) {
+		$max = $self->green;
+		$maxc = 'g';
+	}
+	if($self->blue > $max) {
+		$max = $self->blue;
+		$maxc = 'b';
+	}
+
+	if($self->green < $min) {
+		$min = $self->green;
+	}
+	if($self->blue < $min) {
+		$min = $self->blue;
+	}
+
+	my ($h, $s, $l);
+
+	if($max == $min) {
+		$h = 0;
+	} elsif($maxc eq 'r') {
+		$h = 60 * (($self->green - $self->blue) / ($max - $min)) % 360;
+	} elsif($maxc eq 'g') {
+		$h = (60 * (($self->blue - $self->red) / ($max - $min)) + 120);
+	} elsif($maxc eq 'b') {
+		$h = (60 * (($self->red - $self->green) / ($max - $min)) + 240);
+	}
+
+	$l = ($max + $min) / 2;
+
+	if($max == $min) {
+		$s = 0;
+	} elsif($l <= .5) {
+		$s = ($max - $min) / ($max + $min);
+	} else {
+		$s = ($max - $min) / (2 - ($max + $min));
+	}
+
+	return Graphics::Color::HSL->new(
+		hue => $h, saturation => $s, lightness => $l, alpha => $self->alpha
+	);
+}
+
+sub to_hsv {
+	my ($self) = @_;
+
+	my $max = $self->red;
+	my $maxc = 'r';
+	my $min = $self->red;
+
+	if($self->green > $max) {
+		$max = $self->green;
+		$maxc = 'g';
+	}
+	if($self->blue > $max) {
+		$max = $self->blue;
+		$maxc = 'b';
+	}
+
+	if($self->green < $min) {
+		$min = $self->green;
+	}
+	if($self->blue < $min) {
+		$min = $self->blue;
+	}
+
+	my ($h, $s, $v);
+
+	if($max == $min) {
+		$h = 0;
+	} elsif($maxc eq 'r') {
+		$h = 60 * (($self->green - $self->blue) / ($max - $min)) % 360;
+	} elsif($maxc eq 'g') {
+		$h = (60 * (($self->blue - $self->red) / ($max - $min)) + 120);
+	} elsif($maxc eq 'b') {
+		$h = (60 * (($self->red - $self->green) / ($max - $min)) + 240);
+	}
+
+	$v = $max;
+	if($max == 0) {
+		$s = 0;
+	} else {
+		$s = 1 - ($min / $max);
+	}
+
+	return Graphics::Color::HSV->new(
+		hue => $h, saturation => $s, value => $v, alpha => $self->alpha
 	);
 }
 
@@ -213,6 +312,14 @@ Get the RGBA values as an array
 
 Attempts to retrieve the specified color-id using L<Color::Library>.  The
 result is then converted into a Graphics::Color::RGB object.
+
+=item I<to_hsl>
+
+Creates this RGB color in HSL space.  Returns a L<Graphics::Color::HSL> object.
+
+=item I<to_hsv>
+
+Creates this RGB color in HSV space.  Returns a L<Graphics::Color::HSV> object.
 
 =back
 
