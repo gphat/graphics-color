@@ -1,6 +1,8 @@
 package Graphics::Color::RGB;
 use Moose;
 
+use Color::Library;
+
 extends qw(Graphics::Color);
 
 has 'red' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
@@ -78,6 +80,27 @@ sub equal_to {
     }
 
     return 1;
+}
+
+sub from_color_library {
+	my ($self, $id) = @_;
+
+	my $color;
+	if(ref($id)) {
+		$color = $id;
+	} else {
+		$color = Color::Library->color($id);
+		unless(defined($color)) {
+			die("Couldn't find color for '$id'!");
+		}
+	}
+
+	my ($r, $g, $b) = $color->rgb;
+	return Graphics::Color::RGB->new(
+		red => $r / 255,
+		green => $g / 255,
+		blue => $b / 255
+	);
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -185,6 +208,11 @@ Get the RGB values as an array
 =item I<as_array_with_alpha>
 
 Get the RGBA values as an array
+
+=item I<from_color_library (color-id)>
+
+Attempts to retrieve the specified color-id using L<Color::Library>.  The
+result is then converted into a Graphics::Color::RGB object.
 
 =back
 

@@ -1,5 +1,8 @@
 Revision history for Graphics-Color
 
+0.17
+  - RGB instantiation using Color::Library
+
 0.16
   - Move pod tests to t/author
 
