@@ -33,8 +33,8 @@ cmp_ok($color->as_integer_string, 'eq', '255, 102, 127, 0.00', 'integer string')
 cmp_ok($color->as_hex_string, 'eq', '#ff667f', 'hex string');
 cmp_ok($color->as_percent_string, 'eq', '100%, 40%, 50%, 0.00', 'percent string');
 
-my $rgb2 = $color->clone;
-ok($rgb2->equal_to($color), 'equal_to');
+my $rgbc = $color->clone;
+ok($rgbc->equal_to($color), 'equal_to');
 
 my $new = $color->derive({green => 1});
 cmp_ok($new->green, '==', 1, 'derived color, green');
