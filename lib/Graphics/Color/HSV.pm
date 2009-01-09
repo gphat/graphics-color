@@ -153,79 +153,69 @@ B<Hue> B<Saturation> and B<Value>.  HSV is closely related to HSL.
         value   	=> .25,
     });
 
-=head1 METHODS
+=head1 CONSTRUCTOR
 
-=head2 Constructor
-
-=over 4
-
-=item new
+=head2 Graphics::Color::HSV->new(%options)
 
 Creates a new Graphics::Color::HSV.
 
-=back
+=head1 METHODS
 
-=head2 Instance Methods
-
-=over 4
-
-=item I<equal_to>
+=head2 equal_to
 
 Compares this color to the provided one.  Returns 1 if true, else 0;
 
-=item I<not_equal_to>
+=head2 not_equal_to
 
 The opposite of equal_to.
 
-=item I<hue>
+=head2 hue
 
-=item I<h>
+=head2 h
 
 Set/Get the hue component of this Color.
 
-=item I<saturation>
+=head2 saturation
 
-=item I<s>
+=head2 s
 
 Set/Get the saturation component of this Color.
 
-=item I<value>
+=head2 value
 
-=item I<v>
+=head2 v
 
 Set/Get the value component of this Color.
 
-=item I<alpha>
+=head2 alpha
 
 Set/Get the alpha component of this Color.
 
-=item I<name>
+=head2 name
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item I<as_string>
+=head2 as_string
 
 Get a string version of this Color in the form of
 HUE,SATURATION,VALUE,ALPHA.
 
-=item I<as_percent_string>
+=head2 as_percent_string
 
 Return a percent formatted value for this color.  This format is suitable for
 CSS HSV values.
 
-=item I<as_array>
+=head2 as_array
 
 Get the HSV values as an array
 
-=item I<as_array_with_alpha>
+=head2 as_array_with_alpha>
 
 Get the HSVA values as an array
 
-=item I<to_rgb>
+=head2 to_rgb
 
 Creates this HSV color in RGB space.  Returns a L<Graphics::Color::RGB> object.
-
-=back
 
 =head1 AUTHOR
 

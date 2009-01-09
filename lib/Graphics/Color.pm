@@ -7,7 +7,7 @@ with qw(MooseX::Clone Graphics::Color::Equal);
 with Storage (format => 'JSON', io => 'File');
 
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 subtype 'Graphics::Color::Number360OrLess'
     => as 'Num',
@@ -75,15 +75,15 @@ L<YIQ|Graphics::Color::YIQ>
 
 L<YUV|Graphics::Color::YUV>
 
-=head1 METHODS
+=head1 CONSTRUCTOR
 
-=over 4
-
-=item I<new>
+=head2 Graphics::Color->new(%options);
 
 Makes a new, useless Graphics::Color object. There's no reason to do this.
 
-=item I<derive>
+=head1 METHODS
+
+=head2 derive
 
 Clone this color but allow one of more of it's attributes to change by passing
 in a hashref of options:
@@ -93,15 +93,13 @@ in a hashref of options:
 The returned color will be identical to the cloned one, save the attributes
 specified.
 
-=item I<equal_to>
+=head2 equal_to
 
 Compares this color to the provided one.  Returns 1 if true, else 0;
 
-=item I<not_equal_to>
+=head2 not_equal_to
 
 The opposite of equal_to.
-
-=back
 
 =head1 AUTHOR
 
@@ -124,4 +122,3 @@ L<http://www.iinteractive.com>
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
-=cut

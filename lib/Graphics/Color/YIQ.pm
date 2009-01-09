@@ -61,7 +61,7 @@ Graphics::Color::YIQ represents a Color in an YIQ color space.
 =head1 DISCLAIMER
 
 I couldn't find clear information on the bounds of each value, so at the
-moment there are only 
+moment there are none.
 
 =head1 SYNOPSIS
 
@@ -73,62 +73,52 @@ moment there are only
         quadrature  => .25,
     });
 
-=head1 METHODS
+=head1 CONSTRUCTOR
 
-=head2 Constructor
-
-=over 4
-
-=item I<new>
+=head2 Graphics::Color::YIQ->new(%options);
 
 Creates a new Graphics::Color::YIQ.
 
-=back
+=head1 METHODS
 
-=head2 Instance Methods
-
-=over 4
-
-=item I<equal_to>
+=head2 equal_to
 
 Compares this color to the provided one.  Returns 1 if true, else 0;
 
-=item I<not_equal_to>
+=head2 not_equal_to
 
 The opposite of equal_to.
 
-=item I<luminance>
+=head2 luminance
 
-=item I<y>
+=head2 y
 
 Set/Get the luminance component of this Color.
 
-=item I<in_phase>
+=head2 in_phase
 
-=item I<i>
+=head2 i
 
 Set/Get the in_phase component of this Color.
 
-=item I<quadrature>
+=head2 quadrature
 
-=item I<q>
+=head2 q
 
 Set/Get the quadrature component of this Color.
 
-=item I<name>
+=head2 name
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item I<as_string>
+=head2 as_string
 
 Get a string version of this Color in the form of
 LUMINANCE,IN-PHASE,QUADRATURE
 
-=item I<as_array>
+=head2 as_array
 
 Get the YIQ values as an array
-
-=back
 
 =head1 AUTHOR
 
@@ -138,7 +128,7 @@ Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 
-perl(1), L<a href="http://en.wikipedia.org/wiki/YIQ">Wikipedia</a>>
+perl(1), L<http://en.wikipedia.org/wiki/YIQ>
 
 =head1 COPYRIGHT & LICENSE
 

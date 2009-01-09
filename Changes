@@ -1,5 +1,8 @@
 Revision history for Graphics-Color
 
+0.18
+  - POD Fixes
+
 0.17
   - RGB instantiation using Color::Library
   - Add HSV

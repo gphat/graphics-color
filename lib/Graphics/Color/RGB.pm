@@ -228,100 +228,90 @@ methods are supplied to convert to various string values.
         green   => .25,
     });
 
-=head1 METHODS
+=head1 CONSTRUCTOR
 
-=head2 Constructor
-
-=over 4
-
-=item new
+=head2 Graphics::Color::RGB->new(%options)
 
 Creates a new Graphics::Color::RGB.
 
-=back
+=head1 METHODS
 
-=head2 Instance Methods
-
-=over 4
-
-=item I<equal_to>
+=head2 equal_to
 
 Compares this color to the provided one.  Returns 1 if true, else 0;
 
-=item I<not_equal_to>
+=head2 not_equal_to
 
 The opposite of equal_to.
 
-=item I<red>
+=head2 red
 
-=item I<r>
+=head2 r
 
 Set/Get the red component of this Color.  Aliased to a 'r' as well.
 
-=item I<green>
+=head2 green
 
-=item I<g>
+=head2 g
 
 Set/Get the green component of this Color. Aliased to a 'g' as well.
 
-=item I<blue>
+=head2 blue
 
-=item I<b>
+=head2 b
 
 Set/Get the blue component of this Color. Aliased to a 'b' as well.
 
-=item I<alpha>
+=head2 alpha
 
-=item I<a>
+=head2 a
 
 Set/Get the alpha component of this Color. Aliased to a 'a' as well.
 
-=item I<name>
+=head2 name
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item I<as_string>
+=head2 as_string
 
 Get a string version of this Color in the form of RED,GREEN,BLUE,ALPHA
 
-=item I<as_hex_string>
+=head2 as_hex_string
 
 Return a hex formatted value for this color.  The output ignores the alpha
 channel because, per the W3C, there is no hexadecimal notiation for an RGBA
 value.
 
-=item I<as_integer_string>
+=head2 as_integer_string
 
 Return an integer formatted value for this color.  This format is suitable for
 CSS RGBA values.
 
-=item I<as_percent_string>
+=head2 as_percent_string
 
 Return a percent formatted value for this color.  This format is suitable for
 CSS RGBA values.
 
-=item I<as_array>
+=head2 as_array
 
 Get the RGB values as an array
 
-=item I<as_array_with_alpha>
+=head2 as_array_with_alpha
 
 Get the RGBA values as an array
 
-=item I<from_color_library (color-id)>
+=head2 from_color_library(color-id)
 
 Attempts to retrieve the specified color-id using L<Color::Library>.  The
 result is then converted into a Graphics::Color::RGB object.
 
-=item I<to_hsl>
+=head2 to_hsl
 
 Creates this RGB color in HSL space.  Returns a L<Graphics::Color::HSL> object.
 
-=item I<to_hsv>
+=head2 to_hsv
 
 Creates this RGB color in HSV space.  Returns a L<Graphics::Color::HSV> object.
-
-=back
 
 =head1 AUTHOR
 
@@ -331,7 +321,7 @@ Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 
-perl(1), L<<a href="http://en.wikipedia.org/wiki/RGB_color_space">Wikipedia</a>>
+perl(1), L<http://en.wikipedia.org/wiki/RGB_color_space>
 
 =head1 COPYRIGHT & LICENSE
 

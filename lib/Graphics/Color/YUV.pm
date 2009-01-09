@@ -76,62 +76,52 @@ Graphics::Color::YUV represents a Color in an Y'UV color space.
         red_luminance   => .25,
     });
 
-=head1 METHODS
+=head1 CONSTRUCTOR
 
-=head2 Constructor
-
-=over 4
-
-=item I<new>
+=head2 Graphics::Color::YUV->new(%options);
 
 Creates a new Graphics::Color::YUV.
 
-=back
+=head1 METHODS
 
-=head2 Instance Methods
-
-=over 4
-
-=item I<equal_to>
+=head2 equal_to
 
 Compares this color to the provided one.  Returns 1 if true, else 0;
 
-=item I<not_equal_to>
+=head2 not_equal_to
 
 The opposite of equal_to.
 
-=item I<luma>
+=head2 luma
 
-=item I<y>
+=head2 y
 
 Set/Get the luma (Y') component of this Color.  Aliased to y.
 
-=item I<blue_luminance>
+=head2 blue_luminance
 
-=item I<u>
+=head2 u
 
 Set/Get the blue_luminance component of this Color. Aliased to u.
 
-=item I<red_luminance>
+=head2 red_luminance
 
-=item I<v>
+=head2 v
 
 Set/Get the red_luminance component of this Color. Aliased to v.
 
-=item I<name>
+=head2 name
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item I<as_string>
+=head2 as_string
 
 Get a string version of this Color in the form of
 LUMA,BLUE_LUMINENCE,RED_LUMINANCE
 
-=item I<as_array>
+=head2 as_array
 
 Get the YUV values as an array
-
-=back
 
 =head1 AUTHOR
 
@@ -141,7 +131,7 @@ Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 
-perl(1), L<<a href="http://en.wikipedia.org/wiki/YUV">Wikipedia</a>>
+perl(1), L<http://en.wikipedia.org/wiki/YUV>
 
 =head1 COPYRIGHT & LICENSE
 

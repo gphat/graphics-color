@@ -90,75 +90,65 @@ B<Hue> B<Saturation> and B<Lightness>.
         lightness   => .25,
     });
 
-=head1 METHODS
+=head1 CONSTRUCTOR
 
-=head2 Constructor
-
-=over 4
-
-=item new
+=head2 Graphics::Color::HSL->new(%options);
 
 Creates a new Graphics::Color::HSL.
 
-=back
+=head1 METHODS
 
-=head2 Instance Methods
-
-=over 4
-
-=item I<equal_to>
+=head2 equal_to
 
 Compares this color to the provided one.  Returns 1 if true, else 0;
 
-=item I<not_equal_to>
+=head2 not_equal_to
 
 The opposite of equal_to.
 
-=item I<hue>
+=head2 hue
 
-=item I<h>
+=head2 h
 
 Set/Get the hue component of this Color.
 
-=item I<saturation>
+=head2 saturation
 
-=item I<s>
+=head2 s
 
 Set/Get the saturation component of this Color.
 
-=item I<lightness>
+=head2 lightness
 
-=item I<l>
+=head2 l
 
 Set/Get the lightness component of this Color.
 
-=item I<alpha>
+=head2 alpha
 
 Set/Get the alpha component of this Color.
 
-=item I<name>
+=head2 name
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item I<as_string>
+=head2 as_string
 
 Get a string version of this Color in the form of
 HUE,SATURATION,LIGHTNESS,ALPHA
 
-=item I<as_percent_string>
+=head2 as_percent_string
 
 Return a percent formatted value for this color.  This format is suitable for
 CSS HSL values.
 
-=item I<as_array>
+=head2 as_array
 
 Get the HSL values as an array
 
-=item I<as_array_with_alpha>
+=head2 as_array_with_alpha
 
 Get the HSLA values as an array
-
-=back
 
 =head1 AUTHOR
 
@@ -168,7 +158,7 @@ Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 
-perl(1), L<<a href="http://en.wikipedia.org/wiki/HSL_and_HSV">Wikipedia</a>>
+perl(1), L<http://en.wikipedia.org/wiki/HSL_and_HSV>
 
 =head1 COPYRIGHT & LICENSE
 

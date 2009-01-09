@@ -86,72 +86,62 @@ B<Cyan> B<Magenta> B<Yellow> B<Key> (or black).
         key     => .5
     });
 
-=head1 METHODS
+=head1 CONSTRUCTOR
 
-=head2 Constructor
-
-=over 4
-
-=item I<new>
+=head2 Graphics::Color::CMYK->new(%options);
 
 Creates a new Graphics::Color::CMYK.
 
-=back
+=head1 METHODS
 
-=head2 Instance Methods
+=head2 cyan
 
-=over 4
-
-=item I<cyan>
-
-=item I<c>
+=head2 c
 
 Set/Get the cyan component of this Color.
 
-=item I<equal_to>
+=head2 equal_to
 
 Compares this color to the provided one.  Returns 1 if true, else 0;
 
-=item I<not_equal_to>
+=head2 not_equal_to
 
-The opposite of equal_to.
+The opposite of C<equal_to>.
 
-=item I<magenta>
+=head2 magenta
 
-=item I<m>
+=head2 m
 
 Set/Get the magenta component of this Color.
 
-=item I<yellow>
+=head2 yellow
 
-=item I<y>
+=head2 y
 
 Set/Get the yellow component of this Color.
 
-=item I<key>
+=head2 key
 
-=item I<k>
+=head2 k
 
 Set/Get the key (black) component of this Color.
 
-=item I<name>
+=head2 name
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=item I<as_string>
+=head2 as_string
 
 Get a string version of this Color in the form of
 CYAN,MAGENTA,YELLOW,KEY
 
-=item I<as_percent_string>
+=head2 as_percent_string
 
 Return a percent formatted value for this color.
 
-=item I<as_array>
+=head2 as_array
 
 Get the CMYK values as an array
-
-=back
 
 =head1 AUTHOR
 
@@ -161,7 +151,7 @@ Infinity Interactive, L<http://www.iinteractive.com>
 
 =head1 SEE ALSO
 
-perl(1) L<<a href="http://en.wikipedia.org/wiki/CMYK">Wikipedia</a>>
+perl(1) L<http://en.wikipedia.org/wiki/CMYK>
 
 =head1 COPYRIGHT & LICENSE
 
