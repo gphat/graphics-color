@@ -1,4 +1,7 @@
 Revision history for Graphics-Color
+0.19
+  - Don't add '#' to hex strings
+  - always print six digit hex strings
 
 0.18
   - POD Fixes

@@ -38,7 +38,7 @@ sub as_integer_string {
 sub as_hex_string {
     my ($self) = @_;
 
-    return sprintf('#%x%x%x',
+    return sprintf('%.2x%.2x%.2x',
         $self->red * 255, $self->green * 255, $self->blue * 255
     );
 }

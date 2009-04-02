@@ -1,4 +1,4 @@
-use Test::More tests => 35;
+use Test::More tests => 36;
 
 BEGIN {
     use_ok('Graphics::Color::RGB');
@@ -30,8 +30,14 @@ is_deeply(\@rgba, [1, .4, .5, 0], 'rgba as array');
 cmp_ok($color->as_string, 'eq', '1.00,0.40,0.50,0.00', 'as_string');
 
 cmp_ok($color->as_integer_string, 'eq', '255, 102, 127, 0.00', 'integer string');
-cmp_ok($color->as_hex_string, 'eq', '#ff667f', 'hex string');
+cmp_ok($color->as_hex_string, 'eq', 'ff667f', 'hex string');
 cmp_ok($color->as_percent_string, 'eq', '100%, 40%, 50%, 0.00', 'percent string');
+{
+    my $color_z = Graphics::Color::RGB->new(
+        red => 0, green => .4, blue => .5, alpha => 0
+    );
+    is($color_z->as_hex_string, '00667f', 'hex string with a zero value');
+}
 
 my $rgbc = $color->clone;
 ok($rgbc->equal_to($color), 'equal_to');
