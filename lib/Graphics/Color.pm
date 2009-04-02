@@ -7,7 +7,7 @@ with qw(MooseX::Clone Graphics::Color::Equal);
 with Storage (format => 'JSON', io => 'File');
 
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.18';
+our $VERSION = '0.19';
 
 subtype 'Graphics::Color::Number360OrLess'
     => as 'Num',
@@ -106,6 +106,10 @@ The opposite of equal_to.
 Cory G Watson, C<< <gphat@cpan.org> >>
 
 Infinity Interactive, L<http://www.iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+Guillermo Roditi, C<< <groditi@gmail.com> >>
 
 =head1 BUGS
 
