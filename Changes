@@ -1,4 +1,8 @@
 Revision history for Graphics-Color
+
+0.20
+  - Update some deprecated
+
 0.19
   - Don't add '#' to hex strings
   - always print six digit hex strings

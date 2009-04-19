@@ -11,10 +11,10 @@ has 'yellow' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default
 has 'key' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'name' => ( is => 'rw', isa => 'Str' );
 
-__PACKAGE__->meta->alias_method('c' => __PACKAGE__->can('cyan'));
-__PACKAGE__->meta->alias_method('m' => __PACKAGE__->can('magenta'));
-__PACKAGE__->meta->alias_method('y' => __PACKAGE__->can('yellow'));
-__PACKAGE__->meta->alias_method('k' => __PACKAGE__->can('key'));
+__PACKAGE__->meta->add_method('c' => __PACKAGE__->can('cyan'));
+__PACKAGE__->meta->add_method('m' => __PACKAGE__->can('magenta'));
+__PACKAGE__->meta->add_method('y' => __PACKAGE__->can('yellow'));
+__PACKAGE__->meta->add_method('k' => __PACKAGE__->can('key'));
 
 sub as_string {
     my ($self) = @_;

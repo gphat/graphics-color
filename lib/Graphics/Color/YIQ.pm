@@ -8,9 +8,9 @@ has 'in_phase' => ( is => 'rw', isa => 'Num', default => 1 );
 has 'quadrature' => ( is => 'rw', isa => 'Num', default => 1 );
 has 'name' => ( is => 'rw', isa => 'Str' );
 
-__PACKAGE__->meta->alias_method('y' => __PACKAGE__->can('luminance'));
-__PACKAGE__->meta->alias_method('i' => __PACKAGE__->can('in_phase'));
-__PACKAGE__->meta->alias_method('q' => __PACKAGE__->can('quadrature'));
+__PACKAGE__->meta->add_method('y' => __PACKAGE__->can('luminance'));
+__PACKAGE__->meta->add_method('i' => __PACKAGE__->can('in_phase'));
+__PACKAGE__->meta->add_method('q' => __PACKAGE__->can('quadrature'));
 
 sub as_string {
     my ($self) = @_;

@@ -13,9 +13,9 @@ has 'value' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default 
 has 'alpha' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'name' => ( is => 'rw', isa => 'Str' );
 
-__PACKAGE__->meta->alias_method('h' => __PACKAGE__->can('hue'));
-__PACKAGE__->meta->alias_method('s' => __PACKAGE__->can('saturation'));
-__PACKAGE__->meta->alias_method('v' => __PACKAGE__->can('value'));
+__PACKAGE__->meta->add_method('h' => __PACKAGE__->can('hue'));
+__PACKAGE__->meta->add_method('s' => __PACKAGE__->can('saturation'));
+__PACKAGE__->meta->add_method('v' => __PACKAGE__->can('value'));
 
 sub as_string {
     my ($self) = @_;

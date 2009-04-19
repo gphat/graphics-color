@@ -7,9 +7,9 @@ author   'Cory G Watson <gphat@cpan.org>';
 build_requires 'Test::More';
 
 requires 'Color::Library' => '0.02';
-requires 'Moose' => '0.54';
+requires 'Moose' => '0.74';
 requires 'MooseX::Clone' => '0.03';
-requires 'MooseX::Storage' => '0.14';
+requires 'MooseX::Storage' => '0.17';
 
 auto_install;
 

@@ -8,9 +8,9 @@ has 'blue_luminance' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess',
 has 'red_luminance' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 0 );
 has 'name' => ( is => 'rw', isa => 'Str' );
 
-__PACKAGE__->meta->alias_method('y' => __PACKAGE__->can('luma'));
-__PACKAGE__->meta->alias_method('u' => __PACKAGE__->can('blue_luminance'));
-__PACKAGE__->meta->alias_method('v' => __PACKAGE__->can('red_luminance'));
+__PACKAGE__->meta->add_method('y' => __PACKAGE__->can('luma'));
+__PACKAGE__->meta->add_method('u' => __PACKAGE__->can('blue_luminance'));
+__PACKAGE__->meta->add_method('v' => __PACKAGE__->can('red_luminance'));
 
 sub as_string {
     my ($self) = @_;

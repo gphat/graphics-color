@@ -7,7 +7,7 @@ with qw(MooseX::Clone Graphics::Color::Equal);
 with Storage (format => 'JSON', io => 'File');
 
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.19';
+our $VERSION = '0.20';
 
 subtype 'Graphics::Color::Number360OrLess'
     => as 'Num',

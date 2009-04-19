@@ -13,10 +13,10 @@ has 'blue' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default =
 has 'alpha' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
 has 'name' => ( is => 'rw', isa => 'Str' );
 
-__PACKAGE__->meta->alias_method('r' => __PACKAGE__->can('red'));
-__PACKAGE__->meta->alias_method('g' => __PACKAGE__->can('green'));
-__PACKAGE__->meta->alias_method('b' => __PACKAGE__->can('blue'));
-__PACKAGE__->meta->alias_method('a' => __PACKAGE__->can('alpha'));
+__PACKAGE__->meta->add_method('r' => __PACKAGE__->can('red'));
+__PACKAGE__->meta->add_method('g' => __PACKAGE__->can('green'));
+__PACKAGE__->meta->add_method('b' => __PACKAGE__->can('blue'));
+__PACKAGE__->meta->add_method('a' => __PACKAGE__->can('alpha'));
 
 sub as_string {
     my ($self) = @_;
