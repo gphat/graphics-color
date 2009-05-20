@@ -1,7 +1,11 @@
 Revision history for Graphics-Color
 
+0.21
+  - Remove auto_install
+  - Remove Storage, since I'm not using it
+
 0.20
-  - Update some deprecated
+  - Update some deps
 
 0.19
   - Don't add '#' to hex strings
