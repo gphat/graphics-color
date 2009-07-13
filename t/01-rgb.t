@@ -92,5 +92,5 @@ cmp_ok($h_white->b, '==', 1, 'from_hex_string blue');
 
 my $h_wtf = Graphics::Color::RGB->from_hex_string('#f0aacd');
 delta_ok($h_wtf->r, 0.941, 'from_hex_string red');
-delta_ok($h_wtf->g, 0.803, 'from_hex_string green');
-delta_ok($h_wtf->b, 0.666, 'from_hex_string blue');
+delta_ok($h_wtf->g, 0.666, 'from_hex_string green');
+delta_ok($h_wtf->b, 0.803, 'from_hex_string blue');

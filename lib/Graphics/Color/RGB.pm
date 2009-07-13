@@ -132,8 +132,8 @@ sub from_hex_string {
 
         return Graphics::Color::RGB->new(
             red => hex($1) / 255,
-            blue => hex($2) / 255,
-            green => hex($3) / 255
+            green => hex($2) / 255,
+            blue => hex($3) / 255
         );
     }
 

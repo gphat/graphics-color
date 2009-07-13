@@ -1,5 +1,8 @@
 Revision history for Graphics-Color
 
+0.23
+  - Fix swapped G and B values in from_hex_string
+
 0.22
   - Add from_hex_string to RGB
 
