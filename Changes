@@ -1,8 +1,13 @@
 Revision history for Graphics-Color
 
+0.22
+  - Add from_hex_string to RGB
+
 0.21
   - Remove auto_install
   - Remove Storage, since I'm not using it
+  - Add ability for as_hex_string to prepend a string
+  - Add RGB->as_css_hex
 
 0.20
   - Update some deps

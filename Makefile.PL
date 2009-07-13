@@ -5,6 +5,7 @@ all_from 'lib/Graphics/Color.pm';
 author   'Cory G Watson <gphat@cpan.org>';
 
 build_requires 'Test::More';
+test_requires 'Test::Number::Delta';
 
 requires 'Color::Library' => '0.02';
 requires 'Moose' => '0.74';

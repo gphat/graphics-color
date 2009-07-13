@@ -35,11 +35,19 @@ sub as_integer_string {
     );
 }
 
-sub as_hex_string {
+sub as_css_hex {
     my ($self) = @_;
 
-    return sprintf('%.2x%.2x%.2x',
-        $self->red * 255, $self->green * 255, $self->blue * 255
+    return $self->as_hex_string('#');
+}
+
+sub as_hex_string {
+    my ($self, $prepend) = @_;
+
+    $prepend = '' unless defined($prepend);
+
+    return sprintf('%s%.2x%.2x%.2x',
+        $prepend, $self->red * 255, $self->green * 255, $self->blue * 255
     );
 }
 
@@ -103,6 +111,34 @@ sub from_color_library {
 		green => $g / 255,
 		blue => $b / 255
 	);
+}
+
+sub from_hex_string {
+    my ($self, $hex) = @_;
+
+    # Get rid of the leading # if it's there
+    $hex =~ s/^#//g;
+    $hex = lc($hex);
+
+    my $len = length($hex);
+
+    if(length($hex) == 3) {
+        $hex =~ /([a-f0-9])([a-f0-9])([a-f0-9])/;
+        $hex = "$1$1$2$2$3$3";
+    }
+
+    if(length($hex) == 6) {
+        $hex =~ /([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})/;
+
+        return Graphics::Color::RGB->new(
+            red => hex($1) / 255,
+            blue => hex($2) / 255,
+            green => hex($3) / 255
+        );
+    }
+
+    # Not a valid hex color
+    return undef;
 }
 
 sub to_hsl {
@@ -272,15 +308,24 @@ Set/Get the alpha component of this Color. Aliased to a 'a' as well.
 
 Get the name of this color.  Only valid if the color was created by name.
 
-=head2 as_string
+=head2 as_array
 
-Get a string version of this Color in the form of RED,GREEN,BLUE,ALPHA
+Get the RGB values as an array
 
-=head2 as_hex_string
+=head2 as_array_with_alpha
+
+Get the RGBA values as an array
+
+=head2 as_css_hex
+
+Return a hex formatted value with a prepended '#' for use in CSS and HTML.
+
+=head2 as_hex_string ( [$prepend] )
 
 Return a hex formatted value for this color.  The output ignores the alpha
 channel because, per the W3C, there is no hexadecimal notiation for an RGBA
-value.
+value. Optionally allows you to include a string that will be prepended. This
+is a common way to add the C<#>.
 
 =head2 as_integer_string
 
@@ -292,13 +337,9 @@ CSS RGBA values.
 Return a percent formatted value for this color.  This format is suitable for
 CSS RGBA values.
 
-=head2 as_array
+=head2 as_string
 
-Get the RGB values as an array
-
-=head2 as_array_with_alpha
-
-Get the RGBA values as an array
+Get a string version of this Color in the form of RED,GREEN,BLUE,ALPHA
 
 =head2 from_color_library(color-id)
 

@@ -5,7 +5,7 @@ use Moose::Util::TypeConstraints;
 with qw(MooseX::Clone Graphics::Color::Equal);
 
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.21';
+our $VERSION = '0.22';
 
 subtype 'Graphics::Color::Number360OrLess'
     => as 'Num',
