@@ -1,19 +1,38 @@
 package Graphics::Color::HSL;
 use Moose;
+use MooseX::Aliases;
 
 extends qw(Graphics::Color);
 
 with 'Graphics::Color::Equal';
 
-has 'hue' => ( is => 'rw', isa => 'Graphics::Color::Number360OrLess', default => 1 );
-has 'saturation' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'lightness' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'alpha' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'name' => ( is => 'rw', isa => 'Str' );
+use Graphics::Color::Types qw(Number360OrLess NumberOneOrLess);
 
-__PACKAGE__->meta->add_method('h' => __PACKAGE__->can('hue'));
-__PACKAGE__->meta->add_method('s' => __PACKAGE__->can('saturation'));
-__PACKAGE__->meta->add_method('l' => __PACKAGE__->can('lightness'));
+has 'hue' => (
+    is => 'rw',
+    isa => Number360OrLess,
+    default => 1,
+    alias => 'h'
+);
+has 'saturation' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 's'
+);
+has 'lightness' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 'l'
+);
+has 'alpha' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 'a'
+);
+has 'name' => ( is => 'rw', isa => 'Str' );
 
 sub as_string {
     my ($self) = @_;
@@ -154,17 +173,13 @@ Get the HSLA values as an array
 
 Cory Watson, C<< <gphat@cpan.org> >>
 
-Infinity Interactive, L<http://www.iinteractive.com>
-
 =head1 SEE ALSO
 
 perl(1), L<http://en.wikipedia.org/wiki/HSL_and_HSV>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 by Infinity Interactive, Inc.
-
-L<http://www.iinteractive.com>
+Copyright 2008 - 2009 by Cory G Watson
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

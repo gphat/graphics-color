@@ -1,20 +1,37 @@
 package Graphics::Color::CMYK;
 use Moose;
+use MooseX::Aliases;
 
 extends qw(Graphics::Color);
 
+use Graphics::Color::Types qw(Number360OrLess NumberOneOrLess);
 use Graphics::Color::RGB;
 
-has 'cyan' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'magenta' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'yellow' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'key' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
+has 'cyan' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 'c'
+);
+has 'magenta' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 'm'
+);
+has 'yellow' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 'y'
+);
+has 'key' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 'k'
+);
 has 'name' => ( is => 'rw', isa => 'Str' );
-
-__PACKAGE__->meta->add_method('c' => __PACKAGE__->can('cyan'));
-__PACKAGE__->meta->add_method('m' => __PACKAGE__->can('magenta'));
-__PACKAGE__->meta->add_method('y' => __PACKAGE__->can('yellow'));
-__PACKAGE__->meta->add_method('k' => __PACKAGE__->can('key'));
 
 sub as_string {
     my ($self) = @_;
@@ -147,17 +164,13 @@ Get the CMYK values as an array
 
 Cory Watson, C<< <gphat@cpan.org> >>
 
-Infinity Interactive, L<http://www.iinteractive.com>
-
 =head1 SEE ALSO
 
 perl(1) L<http://en.wikipedia.org/wiki/CMYK>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 by Infinity Interactive, Inc.
-
-L<http://www.iinteractive.com>
+Copyright 2008 - 2009 by Cory G Watson
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

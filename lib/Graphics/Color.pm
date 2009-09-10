@@ -5,17 +5,7 @@ use Moose::Util::TypeConstraints;
 with qw(MooseX::Clone Graphics::Color::Equal);
 
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.23';
-
-subtype 'Graphics::Color::Number360OrLess'
-    => as 'Num',
-    => where { $_ <= 360 && $_ >= 0 },
-    => message { "This number ($_) is not less than or equal to 360!" };
-
-subtype 'Graphics::Color::NumberOneOrLess'
-    => as 'Num',
-    => where { $_ <= 1 && $_ >= 0 },
-    => message { "This number ($_) is not less or equal to one!" };
+our $VERSION = '0.24';
 
 sub derive {
     my ($self, $args) = @_;
@@ -103,8 +93,6 @@ The opposite of equal_to.
 
 Cory G Watson, C<< <gphat@cpan.org> >>
 
-Infinity Interactive, L<http://www.iinteractive.com>
-
 =head1 CONTRIBUTORS
 
 Guillermo Roditi, C<< <groditi@gmail.com> >>
@@ -117,9 +105,7 @@ automatically be notified of progress on your bug as I make changes.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 Infinity Interactive, Inc.
-
-L<http://www.iinteractive.com>
+Copyright 2008 by Cory G Watson
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

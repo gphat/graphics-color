@@ -1,5 +1,6 @@
 package Graphics::Color::RGB;
 use Moose;
+use MooseX::Aliases;
 
 extends qw(Graphics::Color);
 
@@ -7,16 +8,33 @@ use Color::Library;
 use Graphics::Color::HSL;
 use Graphics::Color::HSV;
 
-has 'red' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'green' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'blue' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'alpha' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'name' => ( is => 'rw', isa => 'Str' );
+use Graphics::Color::Types qw(NumberOneOrLess);
 
-__PACKAGE__->meta->add_method('r' => __PACKAGE__->can('red'));
-__PACKAGE__->meta->add_method('g' => __PACKAGE__->can('green'));
-__PACKAGE__->meta->add_method('b' => __PACKAGE__->can('blue'));
-__PACKAGE__->meta->add_method('a' => __PACKAGE__->can('alpha'));
+has 'red' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias  => 'r'
+);
+has 'green' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 'g'
+);
+has 'blue' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 'b'
+);
+has 'alpha' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 'a'
+);
+has 'name' => ( is => 'rw', isa => 'Str' );
 
 sub as_string {
     my ($self) = @_;
@@ -284,25 +302,25 @@ The opposite of equal_to.
 
 =head2 r
 
-Set/Get the red component of this Color.  Aliased to a 'r' as well.
+Set/Get the red component of this Color.  Aliased to 'r' as well.
 
 =head2 green
 
 =head2 g
 
-Set/Get the green component of this Color. Aliased to a 'g' as well.
+Set/Get the green component of this Color. Aliased to 'g' as well.
 
 =head2 blue
 
 =head2 b
 
-Set/Get the blue component of this Color. Aliased to a 'b' as well.
+Set/Get the blue component of this Color. Aliased to 'b' as well.
 
 =head2 alpha
 
 =head2 a
 
-Set/Get the alpha component of this Color. Aliased to a 'a' as well.
+Set/Get the alpha component of this Color. Aliased to 'a' as well.
 
 =head2 name
 
@@ -358,17 +376,13 @@ Creates this RGB color in HSV space.  Returns a L<Graphics::Color::HSV> object.
 
 Cory Watson, C<< <gphat@cpan.org> >>
 
-Infinity Interactive, L<http://www.iinteractive.com>
-
 =head1 SEE ALSO
 
 perl(1), L<http://en.wikipedia.org/wiki/RGB_color_space>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 by Infinity Interactive, Inc.
-
-L<http://www.iinteractive.com>
+Copyright 2008 - 2009 by Cory G Watson
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

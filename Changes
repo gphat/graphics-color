@@ -1,5 +1,9 @@
 Revision history for Graphics-Color
 
+0.24
+  - Use MooseX::Aliases for more powerful aliasing
+  - Use MooseX::Types for better types
+
 0.23
   - Fix swapped G and B values in from_hex_string
 

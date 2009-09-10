@@ -1,16 +1,28 @@
 package Graphics::Color::YIQ;
 use Moose;
+use MooseX::Aliases;
 
 extends qw(Graphics::Color);
 
-has 'luminance' => ( is => 'rw', isa => 'Num', default => 1 );
-has 'in_phase' => ( is => 'rw', isa => 'Num', default => 1 );
-has 'quadrature' => ( is => 'rw', isa => 'Num', default => 1 );
+has 'luminance' => (
+    is => 'rw',
+    isa => 'Num',
+    default => 1,
+    alias => 'y'
+);
+has 'in_phase' => (
+    is => 'rw',
+    isa => 'Num',
+    default => 1,
+    alias => 'i'
+);
+has 'quadrature' => (
+    is => 'rw',
+    isa => 'Num',
+    default => 1,
+    alias => 'q'
+);
 has 'name' => ( is => 'rw', isa => 'Str' );
-
-__PACKAGE__->meta->add_method('y' => __PACKAGE__->can('luminance'));
-__PACKAGE__->meta->add_method('i' => __PACKAGE__->can('in_phase'));
-__PACKAGE__->meta->add_method('q' => __PACKAGE__->can('quadrature'));
 
 sub as_string {
     my ($self) = @_;
@@ -124,17 +136,13 @@ Get the YIQ values as an array
 
 Cory Watson, C<< <gphat@cpan.org> >>
 
-Infinity Interactive, L<http://www.iinteractive.com>
-
 =head1 SEE ALSO
 
 perl(1), L<http://en.wikipedia.org/wiki/YIQ>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 by Infinity Interactive, Inc.
-
-L<http://www.iinteractive.com>
+Copyright 2008 - 2009 by Cory G Watson
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

@@ -1,21 +1,39 @@
 package Graphics::Color::HSV;
 use Moose;
+use MooseX::Aliases;
 
 extends qw(Graphics::Color);
 
 with 'Graphics::Color::Equal';
 
+use Graphics::Color::Types qw(Number360OrLess NumberOneOrLess);
 use Graphics::Color::RGB;
 
-has 'hue' => ( is => 'rw', isa => 'Graphics::Color::Number360OrLess', default => 1 );
-has 'saturation' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'value' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
-has 'alpha' => ( is => 'rw', isa => 'Graphics::Color::NumberOneOrLess', default => 1 );
+has 'hue' => (
+    is => 'rw',
+    isa => Number360OrLess,
+    default => 1,
+    alias => 'h'
+);
+has 'saturation' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 's'
+);
+has 'value' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 'v'
+);
+has 'alpha' => (
+    is => 'rw',
+    isa => NumberOneOrLess,
+    default => 1,
+    alias => 'a'
+);
 has 'name' => ( is => 'rw', isa => 'Str' );
-
-__PACKAGE__->meta->add_method('h' => __PACKAGE__->can('hue'));
-__PACKAGE__->meta->add_method('s' => __PACKAGE__->can('saturation'));
-__PACKAGE__->meta->add_method('v' => __PACKAGE__->can('value'));
 
 sub as_string {
     my ($self) = @_;
@@ -221,17 +239,13 @@ Creates this HSV color in RGB space.  Returns a L<Graphics::Color::RGB> object.
 
 Cory Watson, C<< <gphat@cpan.org> >>
 
-Infinity Interactive, L<http://www.iinteractive.com>
-
 =head1 SEE ALSO
 
 perl(1), L<<a href="http://en.wikipedia.org/wiki/HSL_and_HSV">Wikipedia</a>>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 by Infinity Interactive, Inc.
-
-L<http://www.iinteractive.com>
+Copyright 2008 - 2009 by Cory G Watson
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
