@@ -1,5 +1,8 @@
 Revision history for Graphics-Color
 
+0.25
+  - Fix warnings due to typos in tests (thanks SidBurn)
+
 0.24
   - Use MooseX::Aliases for more powerful aliasing
   - Use MooseX::Types for better types

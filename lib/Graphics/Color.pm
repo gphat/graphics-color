@@ -5,7 +5,7 @@ use Moose::Util::TypeConstraints;
 with qw(MooseX::Clone Graphics::Color::Equal);
 
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.24';
+our $VERSION = '0.25';
 
 sub derive {
     my ($self, $args) = @_;

@@ -36,19 +36,19 @@ ok($color2->equal_to($color), 'equal_to');
 my $color3 = $color2->derive({ saturation => .9 });
 ok($color3->not_equal_to($color2), 'not_equal_to');
 
-my $hsv1 = new Graphics::Color::HSV->new(hue => 0, saturation => 1, value => 1);
+my $hsv1 = Graphics::Color::HSV->new(hue => 0, saturation => 1, value => 1);
 my $rgb1 = $hsv1->to_rgb;
 cmp_ok($rgb1->r, '==', 1, 'RGB conversion: R');
 cmp_ok($rgb1->g, '==', 0, 'RGB conversion: G');
 cmp_ok($rgb1->b, '==', 0, 'RGB conversion: B');
 
-my $hsv2 = new Graphics::Color::HSV->new(hue => 120, saturation => .5, value => 1);
+my $hsv2 = Graphics::Color::HSV->new(hue => 120, saturation => .5, value => 1);
 my $rgb2 = $hsv2->to_rgb;
 cmp_ok($rgb2->r, '==', .5, 'RGB conversion: R');
 cmp_ok($rgb2->g, '==', 1, 'RGB conversion: G');
 cmp_ok($rgb2->b, '==', .5, 'RGB conversion: B');
 
-my $hsv3 = new Graphics::Color::HSV->new(hue => 240, saturation => 1, value => .5);
+my $hsv3 = Graphics::Color::HSV->new(hue => 240, saturation => 1, value => .5);
 my $rgb3 = $hsv3->to_rgb;
 cmp_ok($rgb3->r, '==', 0, 'RGB conversion: R');
 cmp_ok($rgb3->g, '==', 0, 'RGB conversion: G');
