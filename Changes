@@ -1,11 +1,12 @@
 Revision history for Graphics-Color
 
 0.27
-  - Include missing Changes for 0.26
-
-0.26    December 27th, 2009
   - Add MooseX::Storage
   - POD updates
+
+0.26    December 27th, 2009
+  - Add blurb to RGB explaining that 0 is "none" and 1 is "all" and that
+    alpha => 1 is opaque.
 
 0.25
   - Fix warnings due to typos in tests (thanks SidBurn)
