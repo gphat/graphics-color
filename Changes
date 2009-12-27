@@ -1,5 +1,12 @@
 Revision history for Graphics-Color
 
+0.27
+  - Include missing Changes for 0.26
+
+0.26    December 27th, 2009
+  - Add MooseX::Storage
+  - POD updates
+
 0.25
   - Fix warnings due to typos in tests (thanks SidBurn)
 
