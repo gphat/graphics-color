@@ -2,10 +2,10 @@ package Graphics::Color;
 use Moose;
 use Moose::Util::TypeConstraints;
 
-with qw(MooseX::Clone Graphics::Color::Equal);
+with qw(MooseX::Clone Graphics::Color::Equal MooseX::Storage::Deferred);
 
 our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.25';
+our $VERSION = '0.26';
 
 sub derive {
     my ($self, $args) = @_;
