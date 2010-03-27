@@ -1,5 +1,8 @@
 Revision history for Graphics-Color
 
+0.28  March 27, 2010
+  - POD update
+
 0.27    December 27th, 2009
   - Add MooseX::Storage
   - POD updates

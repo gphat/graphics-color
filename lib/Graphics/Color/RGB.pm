@@ -369,6 +369,11 @@ Get a string version of this Color in the form of RED,GREEN,BLUE,ALPHA
 Attempts to retrieve the specified color-id using L<Color::Library>.  The
 result is then converted into a Graphics::Color::RGB object.
 
+=head2 from_hex_string($hex)
+
+Attempts to create a Graphics::Color::RGB object from a hex string. Works with
+or without the leading # and with either 3 or 6 character hex strings.
+
 =head2 to_hsl
 
 Creates this RGB color in HSL space.  Returns a L<Graphics::Color::HSL> object.
