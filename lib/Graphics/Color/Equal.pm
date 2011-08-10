@@ -1,19 +1,9 @@
 package Graphics::Color::Equal;
 use Moose::Role;
 
+# ABSTRACT: Moose equality role
+
 requires 'equal_to';
-
-sub not_equal_to {
-    my ($self, $other) = @_;
-    not $self->equal_to($other);
-}
-
-no Moose;
-1;
-__END__
-=head1 NAME
-
-Graphics::Color::Equal - Moose equality role
 
 =head1 DESCRIPTION
 
@@ -29,23 +19,20 @@ Graphics::Color::Equal is a Moose role for equality.
       # compare and return!
   }
 
-=head1 METHODS
-
-=head2 equal_to
+=method equal_to
 
 Implement this.
 
-=head2 not_equal_to
+=method not_equal_to
 
 Provided you implement C<equal_to>, this will be implemented for you!
 
-=head1 AUTHOR
+=cut
 
-Cory Watson <gphat@cpan.org>
+sub not_equal_to {
+    my ($self, $other) = @_;
+    not $self->equal_to($other);
+}
 
-=head1 COPYRIGHT & LICENSE
-
-Copyright 2008 - 2009 by Cory G Watson
-
-You can redistribute and/or modify this code under the same terms as Perl
-itself.
+no Moose;
+1;

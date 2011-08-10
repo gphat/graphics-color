@@ -4,33 +4,7 @@ use Moose::Util::TypeConstraints;
 
 with qw(MooseX::Clone Graphics::Color::Equal MooseX::Storage::Deferred);
 
-our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.28';
-
-sub derive {
-    my ($self, $args) = @_;
-
-    return unless ref($args) eq 'HASH';
-    my $new = $self->clone;
-    foreach my $key (keys %{ $args }) {
-        $new->$key($args->{$key}) if($new->can($key));
-    }
-    return $new;
-}
-
-sub equal_to {
-    die("Override me!");
-}
-
-__PACKAGE__->meta->make_immutable;
-
-no Moose;
-1;
-__END__
-
-=head1 NAME
-
-Graphics::Color - Device and library agnostic color spaces.
+# ABSTRACT: Device and library agnostic color spaces.
 
 =head1 SYNOPSIS
 
@@ -41,6 +15,8 @@ manipulating colors in various color spaces.
       red => .5, green => .5, blue => .5, alpha => .5
   );
   say $color->as_string;
+
+=begin :prelude
 
 =head1 DISCLAIMER
 
@@ -57,21 +33,22 @@ L<CMYK|Graphics::Color::CMYK>
 
 L<HSL|Graphics::Color::HSL>
 
+L<HSV|Graphics::Color::HSV>
+
 L<RGB|Graphics::Color::RGB>
 
 L<YIQ|Graphics::Color::YIQ>
 
 L<YUV|Graphics::Color::YUV>
 
-=head1 CONSTRUCTOR
+=end :prelude
 
-=head2 Graphics::Color->new(%options);
+=cut
 
-Makes a new, useless Graphics::Color object. There's no reason to do this.
+our $AUTHORITY = 'cpan:GPHAT';
+our $VERSION = '0.28';
 
-=head1 METHODS
-
-=head2 derive
+=method derive
 
 Clone this color but allow one of more of it's attributes to change by passing
 in a hashref of options:
@@ -81,32 +58,34 @@ in a hashref of options:
 The returned color will be identical to the cloned one, save the attributes
 specified.
 
-=head2 equal_to
+=cut
+
+sub derive {
+    my ($self, $args) = @_;
+
+    return unless ref($args) eq 'HASH';
+    my $new = $self->clone;
+    foreach my $key (keys %{ $args }) {
+        $new->$key($args->{$key}) if($new->can($key));
+    }
+    return $new;
+}
+
+=method equal_to
 
 Compares this color to the provided one.  Returns 1 if true, else 0;
 
-=head2 not_equal_to
+=method not_equal_to
 
 The opposite of equal_to.
 
-=head1 AUTHOR
+=cut
 
-Cory G Watson, C<< <gphat@cpan.org> >>
+sub equal_to {
+    die("Override me!");
+}
 
-=head1 CONTRIBUTORS
+__PACKAGE__->meta->make_immutable;
 
-Guillermo Roditi, C<< <groditi@gmail.com> >>
-
-=head1 BUGS
-
-Please report any bugs or feature requests to C<bug-graphics-color at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Graphics-Color>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-=head1 COPYRIGHT & LICENSE
-
-Copyright 2008 by Cory G Watson
-
-This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
-
+no Moose;
+1;
