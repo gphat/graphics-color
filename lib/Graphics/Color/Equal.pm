@@ -11,6 +11,9 @@ Graphics::Color::Equal is a Moose role for equality.
 
 =head1 SYNOPSIS
 
+  package Graphics::Color::Foo;
+  use Moose;
+
   with 'Graphics::Color::Equal';
 
   sub equal_to {

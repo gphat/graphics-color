@@ -18,7 +18,7 @@ Graphics::Color::YUV represents a Color in an Y'UV color space.
 
     my $color = Graphics::Color::YUV->new({
         luma            => .5,
-        blue_luminance  => .5
+        blue_luminance  => .5,
         red_luminance   => .25,
     });
 

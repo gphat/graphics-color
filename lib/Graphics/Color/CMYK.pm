@@ -20,7 +20,7 @@ B<Cyan> B<Magenta> B<Yellow> B<Key> (or black).
 
     my $color = Graphics::Color::CMYK->new({
         cyan    => 120,
-        magenta => .5
+        magenta => .5,
         yellow  => .25,
         key     => .5
     });

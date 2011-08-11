@@ -6,10 +6,12 @@ with qw(MooseX::Clone Graphics::Color::Equal MooseX::Storage::Deferred);
 
 # ABSTRACT: Device and library agnostic color spaces.
 
-=head1 SYNOPSIS
+=head1 DESCRIPTION
 
 Graphics color is a device and library agnostic system for creating and
 manipulating colors in various color spaces.
+
+=head1 SYNOPSIS
 
   my $color = Graphics::Color::RGB->new(
       red => .5, green => .5, blue => .5, alpha => .5
@@ -42,11 +44,6 @@ L<YIQ|Graphics::Color::YIQ>
 L<YUV|Graphics::Color::YUV>
 
 =end :prelude
-
-=cut
-
-our $AUTHORITY = 'cpan:GPHAT';
-our $VERSION = '0.28';
 
 =method derive
 

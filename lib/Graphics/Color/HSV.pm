@@ -20,7 +20,7 @@ B<Hue> B<Saturation> and B<Value>.  HSV is closely related to HSL.
 
     my $color = Graphics::Color::HSV->new({
         hue         => 120,
-        saturation  => .5
+        saturation  => .5,
         value   	=> .25,
     });
 

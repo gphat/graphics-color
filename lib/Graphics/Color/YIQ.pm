@@ -16,7 +16,7 @@ Graphics::Color::YIQ represents a Color in an YIQ color space.
 
     my $color = Graphics::Color::YIQ->new({
         luminance   => 0.5,
-        in_phase    => .5
+        in_phase    => .5,
         quadrature  => .25,
     });
 

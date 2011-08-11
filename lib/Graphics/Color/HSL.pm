@@ -21,7 +21,7 @@ B<Hue> B<Saturation> and B<Lightness>.
 
     my $color = Graphics::Color::HSL->new({
         hue         => 120,
-        saturation  => .5
+        saturation  => .5,
         lightness   => .25,
     });
 
