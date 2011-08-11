@@ -9,31 +9,93 @@ with 'Graphics::Color::Equal';
 use Graphics::Color::Types qw(Number360OrLess NumberOneOrLess);
 use Graphics::Color::RGB;
 
+=head1 DESCRIPTION
+
+Graphics::Color::HSV represents a Color in an RGB color space.  HSLV stands for
+B<Hue> B<Saturation> and B<Value>.  HSV is closely related to HSL.
+
+=head1 SYNOPSIS
+
+    use Graphics::Color::HSV;
+
+    my $color = Graphics::Color::HSV->new({
+        hue         => 120,
+        saturation  => .5
+        value   	=> .25,
+    });
+
+=attr hue
+
+=attr h
+
+Set/Get the hue component of this Color.
+
+=cut
+
 has 'hue' => (
     is => 'rw',
     isa => Number360OrLess,
     default => 1,
     alias => 'h'
 );
+
+=attr saturation
+
+=attr s
+
+Set/Get the saturation component of this Color.
+
+=cut
+
 has 'saturation' => (
     is => 'rw',
     isa => NumberOneOrLess,
     default => 1,
     alias => 's'
 );
+
+=attr value
+
+=attr v
+
+Set/Get the value component of this Color.
+
+=cut
+
 has 'value' => (
     is => 'rw',
     isa => NumberOneOrLess,
     default => 1,
     alias => 'v'
 );
+
+=attr alpha
+
+Set/Get the alpha component of this Color.
+
+=cut
+
 has 'alpha' => (
     is => 'rw',
     isa => NumberOneOrLess,
     default => 1,
     alias => 'a'
 );
+
+=attr name
+
+Get the name of this color.  Only valid if the color was created by name.
+
+=cut
+
 has 'name' => ( is => 'rw', isa => 'Str' );
+
+=method as_string
+
+Get a string version of this Color in the form of
+HUE,SATURATION,VALUE,ALPHA.
+
+=cut
 
 sub as_string {
     my ($self) = @_;
@@ -42,6 +104,13 @@ sub as_string {
         $self->hue, $self->saturation, $self->value, $self->alpha
     );
 }
+
+=method as_percent_string
+
+Return a percent formatted value for this color.  This format is suitable for
+CSS HSV values.
+
+=cut
 
 sub as_percent_string {
     my ($self) = @_;
@@ -52,17 +121,35 @@ sub as_percent_string {
     );
 }
 
+=method as_array
+
+Get the HSV values as an array
+
+=cut
+
 sub as_array {
     my ($self) = @_;
 
     return ($self->hue, $self->saturation, $self->value);
 }
 
+=method as_array_with_alpha>
+
+Get the HSVA values as an array
+
+=cut
+
 sub as_array_with_alpha {
     my ($self) = @_;
 
     return ($self->hue, $self->saturation, $self->value, $self->alpha);
 }
+
+=method equal_to
+
+Compares this color to the provided one.  Returns 1 if true, else 0;
+
+=cut
 
 sub equal_to {
     my ($self, $other) = @_;
@@ -84,6 +171,18 @@ sub equal_to {
 
     return 1;
 }
+
+=method not_equal_to
+
+The opposite of equal_to.
+
+=cut
+
+=method to_rgb
+
+Creates this HSV color in RGB space.  Returns a L<Graphics::Color::RGB> object.
+
+=cut
 
 sub to_rgb {
 	my ($self) = @_;
@@ -150,102 +249,3 @@ __PACKAGE__->meta->make_immutable;
 
 no Moose;
 1;
-__END__
-
-=head1 NAME
-
-Graphics::Color::HSV - HSV color space
-
-=head1 DESCRIPTION
-
-Graphics::Color::HSV represents a Color in an RGB color space.  HSLV stands for
-B<Hue> B<Saturation> and B<Value>.  HSV is closely related to HSL.
-
-=head1 SYNOPSIS
-
-    use Graphics::Color::HSV;
-
-    my $color = Graphics::Color::HSV->new({
-        hue         => 120,
-        saturation  => .5
-        value   	=> .25,
-    });
-
-=head1 CONSTRUCTOR
-
-=head2 Graphics::Color::HSV->new(%options)
-
-Creates a new Graphics::Color::HSV.
-
-=head1 METHODS
-
-=head2 equal_to
-
-Compares this color to the provided one.  Returns 1 if true, else 0;
-
-=head2 not_equal_to
-
-The opposite of equal_to.
-
-=head2 hue
-
-=head2 h
-
-Set/Get the hue component of this Color.
-
-=head2 saturation
-
-=head2 s
-
-Set/Get the saturation component of this Color.
-
-=head2 value
-
-=head2 v
-
-Set/Get the value component of this Color.
-
-=head2 alpha
-
-Set/Get the alpha component of this Color.
-
-=head2 name
-
-Get the name of this color.  Only valid if the color was created by name.
-
-=head2 as_string
-
-Get a string version of this Color in the form of
-HUE,SATURATION,VALUE,ALPHA.
-
-=head2 as_percent_string
-
-Return a percent formatted value for this color.  This format is suitable for
-CSS HSV values.
-
-=head2 as_array
-
-Get the HSV values as an array
-
-=head2 as_array_with_alpha>
-
-Get the HSVA values as an array
-
-=head2 to_rgb
-
-Creates this HSV color in RGB space.  Returns a L<Graphics::Color::RGB> object.
-
-=head1 AUTHOR
-
-Cory Watson, C<< <gphat@cpan.org> >>
-
-=head1 SEE ALSO
-
-perl(1), L<<a href="http://en.wikipedia.org/wiki/HSL_and_HSV">Wikipedia</a>>
-
-=head1 COPYRIGHT & LICENSE
-
-Copyright 2008 - 2009 by Cory G Watson
-
-This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.

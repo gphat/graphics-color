@@ -85,7 +85,7 @@ has 'key' => (
     alias => 'k'
 );
 
-=head2 name
+=attr name
 
 Get the name of this color.  Only valid if the color was created by name.
 
