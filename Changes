@@ -1,7 +1,7 @@
 Revision history for Graphics-Color
 
 0.28  March 27, 2010
-  - Rely on newer MooseX::Aliases (DSADINOFF)
+  - Rely on newer MooseX::Aliases (DSADINOFF, RT #70193)
   - POD update
 
 0.27    December 27th, 2009
