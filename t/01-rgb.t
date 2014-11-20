@@ -33,7 +33,7 @@ cmp_ok($color->as_string, 'eq', '1.00,0.40,0.50,0.00', 'as_string');
 
 cmp_ok($color->as_integer_string, 'eq', '255, 102, 127, 0.00', 'integer string');
 cmp_ok($color->as_hex_string, 'eq', 'ff667f', 'hex string');
-cmp_ok($color->as_hex_string('#'), '#ff667f', 'hex string with prepend');
+cmp_ok($color->as_hex_string('#'), 'eq', '#ff667f', 'hex string with prepend');
 cmp_ok($color->as_css_hex, '#ff667f', 'hex string with prepend');
 cmp_ok($color->as_percent_string, 'eq', '100%, 40%, 50%, 0.00', 'percent string');
 {
